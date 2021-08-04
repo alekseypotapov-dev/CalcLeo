@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7C26BADABD00AD4D75 /* AppDelegate.swift */; };
 		84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */; };
-		84366E8126BADABD00AD4D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E8026BADABD00AD4D75 /* ViewController.swift */; };
-		84366E8426BADABD00AD4D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8226BADABD00AD4D75 /* Main.storyboard */; };
 		84366E8626BADABF00AD4D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8526BADABF00AD4D75 /* Assets.xcassets */; };
 		84366E8926BADABF00AD4D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */; };
+		84366E9426BADEAB00AD4D75 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E9326BADEAB00AD4D75 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84366E7926BADABD00AD4D75 /* CalcLeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcLeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84366E7C26BADABD00AD4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84366E8026BADABD00AD4D75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84366E8326BADABD00AD4D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84366E8526BADABF00AD4D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84366E8826BADABF00AD4D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84366E8A26BADABF00AD4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84366E9326BADEAB00AD4D75 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../../MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +54,38 @@
 		84366E7B26BADABD00AD4D75 /* CalcLeo */ = {
 			isa = PBXGroup;
 			children = (
+				84366E9026BADDCD00AD4D75 /* Classes */,
+				84366E9126BADDD400AD4D75 /* Resources */,
+			);
+			path = CalcLeo;
+			sourceTree = "<group>";
+		};
+		84366E9026BADDCD00AD4D75 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
 				84366E7C26BADABD00AD4D75 /* AppDelegate.swift */,
 				84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */,
-				84366E8026BADABD00AD4D75 /* ViewController.swift */,
-				84366E8226BADABD00AD4D75 /* Main.storyboard */,
+				84366E9226BADEA500AD4D75 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		84366E9126BADDD400AD4D75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				84366E8526BADABF00AD4D75 /* Assets.xcassets */,
 				84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */,
 				84366E8A26BADABF00AD4D75 /* Info.plist */,
 			);
-			path = CalcLeo;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84366E9226BADEA500AD4D75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84366E9326BADEAB00AD4D75 /* MainViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +147,6 @@
 			files = (
 				84366E8926BADABF00AD4D75 /* LaunchScreen.storyboard in Resources */,
 				84366E8626BADABF00AD4D75 /* Assets.xcassets in Resources */,
-				84366E8426BADABD00AD4D75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84366E8126BADABD00AD4D75 /* ViewController.swift in Sources */,
+				84366E9426BADEAB00AD4D75 /* MainViewController.swift in Sources */,
 				84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */,
 				84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +166,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		84366E8226BADABD00AD4D75 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84366E8326BADABD00AD4D75 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,7 +300,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6W248GRQS;
-				INFOPLIST_FILE = CalcLeo/Info.plist;
+				INFOPLIST_FILE = CalcLeo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6W248GRQS;
-				INFOPLIST_FILE = CalcLeo/Info.plist;
+				INFOPLIST_FILE = CalcLeo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

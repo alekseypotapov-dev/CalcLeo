@@ -1,3 +1,3 @@
 # 🦁 Rawwr-culator
 
-### Initial Commit
+### Project setup
