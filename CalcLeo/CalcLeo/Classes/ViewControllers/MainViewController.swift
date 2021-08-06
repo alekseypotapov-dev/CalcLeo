@@ -2,6 +2,7 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    private let titleLabel = UILabel()
     private let settingsButton = UIButton(type: .detailDisclosure)
     private let calculatorView = CalculatorView()
 
@@ -18,14 +19,18 @@ extension MainViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         calculatorView.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
+        view.addSubview(titleLabel)
         view.addSubview(settingsButton)
         view.addSubview(calculatorView)
 
         settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            settingsButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            settingsButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             settingsButton.widthAnchor.constraint(equalToConstant: 40),
             settingsButton.heightAnchor.constraint(equalToConstant: 40),
             settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -37,6 +42,8 @@ extension MainViewController {
 
         calculatorView.backgroundColor = .red
         view.backgroundColor = .white
+
+        titleLabel.text = "🦁 Calculator"
     }
 
     @objc
