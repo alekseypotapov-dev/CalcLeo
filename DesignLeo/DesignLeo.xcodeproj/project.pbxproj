@@ -7,25 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7C26BADABD00AD4D75 /* AppDelegate.swift */; };
-		84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */; };
-		84366E8626BADABF00AD4D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8526BADABF00AD4D75 /* Assets.xcassets */; };
-		84366E8926BADABF00AD4D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */; };
-		84366E9426BADEAB00AD4D75 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E9326BADEAB00AD4D75 /* MainViewController.swift */; };
+		848E80F126BD23C60078A6A2 /* DesignLeo.h in Headers */ = {isa = PBXBuildFile; fileRef = 848E80EF26BD23C60078A6A2 /* DesignLeo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E00D1C26BD2D4100B8ECFA /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E00D1B26BD2D4100B8ECFA /* ColorScheme.swift */; };
+		84E00D1E26BD2D5D00B8ECFA /* StyleScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E00D1D26BD2D5D00B8ECFA /* StyleScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84366E7926BADABD00AD4D75 /* CalcLeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcLeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84366E7C26BADABD00AD4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84366E8526BADABF00AD4D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84366E8826BADABF00AD4D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84366E8A26BADABF00AD4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84366E9326BADEAB00AD4D75 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../../../../MainViewController.swift; sourceTree = "<group>"; };
+		848E80EC26BD23C60078A6A2 /* DesignLeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignLeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		848E80EF26BD23C60078A6A2 /* DesignLeo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignLeo.h; sourceTree = "<group>"; };
+		848E80F026BD23C60078A6A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E00D1B26BD2D4100B8ECFA /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		84E00D1D26BD2D5D00B8ECFA /* StyleScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		84366E7626BADABD00AD4D75 /* Frameworks */ = {
+		848E80E926BD23C50078A6A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,94 +31,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84366E7026BADABD00AD4D75 = {
+		848E80E226BD23C50078A6A2 = {
 			isa = PBXGroup;
 			children = (
-				84366E7B26BADABD00AD4D75 /* CalcLeo */,
-				84366E7A26BADABD00AD4D75 /* Products */,
+				848E80EE26BD23C60078A6A2 /* DesignLeo */,
+				848E80ED26BD23C60078A6A2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		84366E7A26BADABD00AD4D75 /* Products */ = {
+		848E80ED26BD23C60078A6A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84366E7926BADABD00AD4D75 /* CalcLeo.app */,
+				848E80EC26BD23C60078A6A2 /* DesignLeo.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84366E7B26BADABD00AD4D75 /* CalcLeo */ = {
+		848E80EE26BD23C60078A6A2 /* DesignLeo */ = {
 			isa = PBXGroup;
 			children = (
-				84366E9026BADDCD00AD4D75 /* Classes */,
-				84366E9126BADDD400AD4D75 /* Resources */,
+				84E00D1A26BD2D1600B8ECFA /* Design */,
+				848E80EF26BD23C60078A6A2 /* DesignLeo.h */,
+				848E80F026BD23C60078A6A2 /* Info.plist */,
 			);
-			path = CalcLeo;
+			path = DesignLeo;
 			sourceTree = "<group>";
 		};
-		84366E9026BADDCD00AD4D75 /* Classes */ = {
+		84E00D1A26BD2D1600B8ECFA /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				84366E7C26BADABD00AD4D75 /* AppDelegate.swift */,
-				84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */,
-				84366E9226BADEA500AD4D75 /* Views */,
+				84E00D1B26BD2D4100B8ECFA /* ColorScheme.swift */,
+				84E00D1D26BD2D5D00B8ECFA /* StyleScheme.swift */,
 			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		84366E9126BADDD400AD4D75 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				84366E8526BADABF00AD4D75 /* Assets.xcassets */,
-				84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */,
-				84366E8A26BADABF00AD4D75 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		84366E9226BADEA500AD4D75 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				84366E9326BADEAB00AD4D75 /* MainViewController.swift */,
-			);
-			path = Views;
+			path = Design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		848E80E726BD23C50078A6A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848E80F126BD23C60078A6A2 /* DesignLeo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		84366E7826BADABD00AD4D75 /* CalcLeo */ = {
+		848E80EB26BD23C50078A6A2 /* DesignLeo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84366E8D26BADABF00AD4D75 /* Build configuration list for PBXNativeTarget "CalcLeo" */;
+			buildConfigurationList = 848E80F426BD23C60078A6A2 /* Build configuration list for PBXNativeTarget "DesignLeo" */;
 			buildPhases = (
-				84366E7526BADABD00AD4D75 /* Sources */,
-				84366E7626BADABD00AD4D75 /* Frameworks */,
-				84366E7726BADABD00AD4D75 /* Resources */,
+				848E80E726BD23C50078A6A2 /* Headers */,
+				848E80E826BD23C50078A6A2 /* Sources */,
+				848E80E926BD23C50078A6A2 /* Frameworks */,
+				848E80EA26BD23C50078A6A2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CalcLeo;
-			productName = CalcLeo;
-			productReference = 84366E7926BADABD00AD4D75 /* CalcLeo.app */;
-			productType = "com.apple.product-type.application";
+			name = DesignLeo;
+			productName = DesignLeo;
+			productReference = 848E80EC26BD23C60078A6A2 /* DesignLeo.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		84366E7126BADABD00AD4D75 /* Project object */ = {
+		848E80E326BD23C50078A6A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					84366E7826BADABD00AD4D75 = {
+					848E80EB26BD23C50078A6A2 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
-			buildConfigurationList = 84366E7426BADABD00AD4D75 /* Build configuration list for PBXProject "CalcLeo" */;
+			buildConfigurationList = 848E80E626BD23C50078A6A2 /* Build configuration list for PBXProject "DesignLeo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,54 +120,40 @@
 				en,
 				Base,
 			);
-			mainGroup = 84366E7026BADABD00AD4D75;
-			productRefGroup = 84366E7A26BADABD00AD4D75 /* Products */;
+			mainGroup = 848E80E226BD23C50078A6A2;
+			productRefGroup = 848E80ED26BD23C60078A6A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84366E7826BADABD00AD4D75 /* CalcLeo */,
+				848E80EB26BD23C50078A6A2 /* DesignLeo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		84366E7726BADABD00AD4D75 /* Resources */ = {
+		848E80EA26BD23C50078A6A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84366E8926BADABF00AD4D75 /* LaunchScreen.storyboard in Resources */,
-				84366E8626BADABF00AD4D75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		84366E7526BADABD00AD4D75 /* Sources */ = {
+		848E80E826BD23C50078A6A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84366E9426BADEAB00AD4D75 /* MainViewController.swift in Sources */,
-				84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */,
-				84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */,
+				84E00D1E26BD2D5D00B8ECFA /* StyleScheme.swift in Sources */,
+				84E00D1C26BD2D4100B8ECFA /* ColorScheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84366E8826BADABF00AD4D75 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		84366E8B26BADABF00AD4D75 /* Debug */ = {
+		848E80F226BD23C60078A6A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,6 +187,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -228,17 +205,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		84366E8C26BADABF00AD4D75 /* Release */ = {
+		848E80F326BD23C60078A6A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,6 +251,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -283,49 +263,64 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		84366E8E26BADABF00AD4D75 /* Debug */ = {
+		848E80F526BD23C60078A6A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = J6W248GRQS;
-				INFOPLIST_FILE = CalcLeo/Resources/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DesignLeo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.none.testing.CalcLeo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.none.mathleo.DesignLeo;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		84366E8F26BADABF00AD4D75 /* Release */ = {
+		848E80F626BD23C60078A6A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = J6W248GRQS;
-				INFOPLIST_FILE = CalcLeo/Resources/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DesignLeo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.none.testing.CalcLeo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.none.mathleo.DesignLeo;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84366E7426BADABD00AD4D75 /* Build configuration list for PBXProject "CalcLeo" */ = {
+		848E80E626BD23C50078A6A2 /* Build configuration list for PBXProject "DesignLeo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84366E8B26BADABF00AD4D75 /* Debug */,
-				84366E8C26BADABF00AD4D75 /* Release */,
+				848E80F226BD23C60078A6A2 /* Debug */,
+				848E80F326BD23C60078A6A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84366E8D26BADABF00AD4D75 /* Build configuration list for PBXNativeTarget "CalcLeo" */ = {
+		848E80F426BD23C60078A6A2 /* Build configuration list for PBXNativeTarget "DesignLeo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84366E8E26BADABF00AD4D75 /* Debug */,
-				84366E8F26BADABF00AD4D75 /* Release */,
+				848E80F526BD23C60078A6A2 /* Debug */,
+				848E80F626BD23C60078A6A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 84366E7126BADABD00AD4D75 /* Project object */;
+	rootObject = 848E80E326BD23C50078A6A2 /* Project object */;
 }
