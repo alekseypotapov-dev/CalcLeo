@@ -58,7 +58,7 @@ extension MainViewController {
 
         calculatorView.setupUI(with: DesignService())
     }
-    
+
     @objc
     func openSettings() {
         let settingsViewController = SettingsViewController()

@@ -6,7 +6,7 @@ enum ColorSettingType {
 }
 
 protocol DesignServiceProtocol {
-    
+
     var colorSetting: ColorSettingType { get set }
 
     var primaryButtonBackgroundColor: UIColor { get }

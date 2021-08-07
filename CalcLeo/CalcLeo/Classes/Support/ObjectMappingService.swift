@@ -10,7 +10,7 @@ struct PlistObjectMappingService<Object: Decodable>: ObjectMappingServiceProtoco
 
     func performMapping(with url: URL, callback: @escaping (Result<Object, Error>) -> Void) {
         let decoder = PropertyListDecoder()
-        
+
         do {
             let data = try Data(contentsOf: url)
             do {

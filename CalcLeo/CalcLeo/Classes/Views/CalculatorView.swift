@@ -29,7 +29,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
 
         return label
     }()
-    
+
     func setupUI(with designService: DesignServiceProtocol) {
         self.designService = designService
 
@@ -51,11 +51,16 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
             mainHorizontalStackView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor),
             mainHorizontalStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             mainHorizontalStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            mainHorizontalStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            mainHorizontalStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
         ])
     }
 
     func dataUpdated(models: [[ButtonSymbol]]) {
+
+        for arrangedSubview in mainHorizontalStackView.arrangedSubviews {
+            mainHorizontalStackView.removeArrangedSubview(arrangedSubview)
+        }
+
         var columnStackViews = [UIStackView]()
 
         for buttonColumn in models {
@@ -97,6 +102,10 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
 
     func publishError(_ message: String) {
         // tod: show alert with error
+    }
+
+    func updateResult(with text: String) {
+        resultLabel.text = text
     }
 
     @objc

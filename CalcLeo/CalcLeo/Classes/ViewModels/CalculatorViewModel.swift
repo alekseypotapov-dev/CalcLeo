@@ -3,6 +3,7 @@ import Foundation
 protocol CalculatorViewModelDelegate: AnyObject {
     func dataUpdated(models: [[ButtonSymbol]])
     func publishError(_ message: String)
+    func updateResult(with text: String)
 }
 
 final class CalculatorViewModel {
@@ -34,6 +35,10 @@ final class CalculatorViewModel {
     }
 
     func buttonTap(with id: Int) {
-        
+        guard let buttons = buttons else { return }
+
+        if let element = (buttons.joined().first { $0.id == id }) {
+            delegate?.updateResult(with: element.value)
+        }
     }
 }
