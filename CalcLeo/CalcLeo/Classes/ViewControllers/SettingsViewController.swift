@@ -2,7 +2,16 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
 
-    private var toolbarView = UIToolbar()
+    private var toolbarView: UIToolbar = {
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+        toolBar.translatesAutoresizingMaskIntoConstraints = false
+
+        let flexibleSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: #selector(closeView))
+        toolBar.setItems([flexibleSpaceItem, doneBarButtonItem], animated: false)
+
+        return toolBar
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,21 +24,14 @@ extension SettingsViewController {
 
     private func setupUI() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        toolbarView.translatesAutoresizingMaskIntoConstraints = false
-
         view.addSubview(toolbarView)
+        view.backgroundColor = .blue
 
         NSLayoutConstraint.activate([
             toolbarView.topAnchor.constraint(equalTo: view.topAnchor),
             toolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             toolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-
-        let flexibleSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: #selector(closeView))
-        toolbarView.setItems([flexibleSpaceItem, doneBarButtonItem], animated: true)
-
-        view.backgroundColor = .blue
     }
 
     @objc private func closeView() {

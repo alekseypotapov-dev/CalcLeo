@@ -5,18 +5,25 @@ final class MainViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "🦁 Calculator"
+        
         return label
     }()
 
     private let settingsButton: UIButton = {
         let button = UIButton(type: .detailDisclosure)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
+
         return button
     }()
 
     private let calculatorView: CalculatorView = {
         let calculator = CalculatorView()
         calculator.translatesAutoresizingMaskIntoConstraints = false
+        calculator.setupUI(with: DesignService())
+        calculator.backgroundColor = .red
+
         return calculator
     }()
 
@@ -31,12 +38,11 @@ extension MainViewController {
 
     private func setupUI() {
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
 
         view.addSubview(titleLabel)
         view.addSubview(settingsButton)
         view.addSubview(calculatorView)
-
-        settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -50,13 +56,6 @@ extension MainViewController {
             calculatorView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             calculatorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-
-        calculatorView.backgroundColor = .red
-        view.backgroundColor = .white
-
-        titleLabel.text = "🦁 Calculator"
-
-        calculatorView.setupUI(with: DesignService())
     }
 
     @objc
