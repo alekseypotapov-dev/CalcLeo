@@ -7,6 +7,5 @@ struct ButtonSymbol: Decodable {
     var value: String
     var type: ButtonSymbolType
     var visible: Bool
-    var column: Int
-    var row: Int
+    var id: Int
 }

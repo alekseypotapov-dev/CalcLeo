@@ -4,7 +4,8 @@ import XCTest
 final class ObjectMappingServiceTests: XCTestCase {
 
     func test_performMappingPlist_success() throws {
-        let sut = ObjectMappingService<[ButtonSymbol]>()
+        typealias Buttons = [[ButtonSymbol]]
+        let sut = PlistObjectMappingService<Buttons>()
 
         var actual: ButtonSymbol?
 
@@ -13,10 +14,10 @@ final class ObjectMappingServiceTests: XCTestCase {
             return
         }
 
-        sut.performMappingPlist(with: url) { result in
+        sut.performMapping(with: url) { result in
             switch result {
-            case .success(let objects): actual = objects.first
-            case .failure(let error): XCTFail("\(error)")
+            case .success(let objects): actual = objects.first?.first
+            case .failure(let error): XCTFail("mapping failed: \(error.localizedDescription)")
             }
         }
 
