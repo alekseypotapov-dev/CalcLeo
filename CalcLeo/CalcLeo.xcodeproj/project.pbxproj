@@ -19,6 +19,10 @@
 		84E766F726BD5C25004D2EE0 /* DesignLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E766EC26BD5BE3004D2EE0 /* DesignLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E766F826BD5C29004D2EE0 /* MathLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E766F326BD5BEC004D2EE0 /* MathLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E766F926BD76CC004D2EE0 /* DesignService.swift */; };
+		84E7670026BEA949004D2EE0 /* ObjectMappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E766FF26BEA949004D2EE0 /* ObjectMappingService.swift */; };
+		84E7670326BEB1D7004D2EE0 /* ButtonSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7670226BEB1D7004D2EE0 /* ButtonSymbol.swift */; };
+		84E7672726BEDF4F004D2EE0 /* ObjectMappingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7671226BEDD30004D2EE0 /* ObjectMappingServiceTests.swift */; };
+		84E7677126BEE3E4004D2EE0 /* Features-success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E7676F26BEE233004D2EE0 /* Features-success.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 848E80D726BD23870078A6A2;
 			remoteInfo = MathLeoTests;
+		};
+		84E7672226BEDF4A004D2EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84366E7126BADABD00AD4D75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84366E7826BADABD00AD4D75;
+			remoteInfo = CalcLeo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,10 +86,23 @@
 		84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DesignLeo.xcodeproj; path = ../../../DesignLeo/DesignLeo.xcodeproj; sourceTree = "<group>"; };
 		84E766ED26BD5BEC004D2EE0 /* MathLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MathLeo.xcodeproj; path = ../../../MathLeo/MathLeo.xcodeproj; sourceTree = "<group>"; };
 		84E766F926BD76CC004D2EE0 /* DesignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignService.swift; sourceTree = "<group>"; };
+		84E766FF26BEA949004D2EE0 /* ObjectMappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMappingService.swift; sourceTree = "<group>"; };
+		84E7670226BEB1D7004D2EE0 /* ButtonSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSymbol.swift; sourceTree = "<group>"; };
+		84E7671226BEDD30004D2EE0 /* ObjectMappingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMappingServiceTests.swift; sourceTree = "<group>"; };
+		84E7671D26BEDF4A004D2EE0 /* CalcLeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcLeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E7672126BEDF4A004D2EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E7676F26BEE233004D2EE0 /* Features-success.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Features-success.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84366E7626BADABD00AD4D75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E7671A26BEDF4A004D2EE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				84366E7B26BADABD00AD4D75 /* CalcLeo */,
+				84E7671E26BEDF4A004D2EE0 /* CalcLeoTests */,
 				84366E7A26BADABD00AD4D75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				84366E7926BADABD00AD4D75 /* CalcLeo.app */,
+				84E7671D26BEDF4A004D2EE0 /* CalcLeoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +144,7 @@
 			children = (
 				84366E7C26BADABD00AD4D75 /* AppDelegate.swift */,
 				84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */,
+				84E7670126BEB1C2004D2EE0 /* Models */,
 				84E00D2826BD3FDD00B8ECFA /* ViewControllers */,
 				84366E9226BADEA500AD4D75 /* Views */,
 				84366E9726BC74EF00AD4D75 /* Support */,
@@ -148,6 +175,7 @@
 		84366E9726BC74EF00AD4D75 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				84E766FF26BEA949004D2EE0 /* ObjectMappingService.swift */,
 				84366E9A26BC764600AD4D75 /* CalculatorInterfaceConstructor.swift */,
 				84E766F926BD76CC004D2EE0 /* DesignService.swift */,
 			);
@@ -189,6 +217,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		84E7670126BEB1C2004D2EE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84E7670226BEB1D7004D2EE0 /* ButtonSymbol.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84E7671E26BEDF4A004D2EE0 /* CalcLeoTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E7671226BEDD30004D2EE0 /* ObjectMappingServiceTests.swift */,
+				84E7676F26BEE233004D2EE0 /* Features-success.plist */,
+				84E7672126BEDF4A004D2EE0 /* Info.plist */,
+			);
+			path = CalcLeoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,6 +256,24 @@
 			productReference = 84366E7926BADABD00AD4D75 /* CalcLeo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		84E7671C26BEDF4A004D2EE0 /* CalcLeoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E7672426BEDF4A004D2EE0 /* Build configuration list for PBXNativeTarget "CalcLeoTests" */;
+			buildPhases = (
+				84E7671926BEDF4A004D2EE0 /* Sources */,
+				84E7671A26BEDF4A004D2EE0 /* Frameworks */,
+				84E7671B26BEDF4A004D2EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E7672326BEDF4A004D2EE0 /* PBXTargetDependency */,
+			);
+			name = CalcLeoTests;
+			productName = CalcLeoTests;
+			productReference = 84E7671D26BEDF4A004D2EE0 /* CalcLeoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +285,10 @@
 				TargetAttributes = {
 					84366E7826BADABD00AD4D75 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					84E7671C26BEDF4A004D2EE0 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 84366E7826BADABD00AD4D75;
 					};
 				};
 			};
@@ -248,6 +316,7 @@
 			projectRoot = "";
 			targets = (
 				84366E7826BADABD00AD4D75 /* CalcLeo */,
+				84E7671C26BEDF4A004D2EE0 /* CalcLeoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +356,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E7671B26BEDF4A004D2EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E7677126BEE3E4004D2EE0 /* Features-success.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,17 +371,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E7670326BEB1D7004D2EE0 /* ButtonSymbol.swift in Sources */,
 				84366E9B26BC764600AD4D75 /* CalculatorInterfaceConstructor.swift in Sources */,
 				84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */,
 				84366ED526BD18F900AD4D75 /* MainViewController.swift in Sources */,
 				84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */,
 				84366E9626BC74D000AD4D75 /* SettingsViewController.swift in Sources */,
 				84E00D2726BD3FC700B8ECFA /* CalculatorView.swift in Sources */,
+				84E7670026BEA949004D2EE0 /* ObjectMappingService.swift in Sources */,
 				84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E7671926BEDF4A004D2EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E7672726BEDF4F004D2EE0 /* ObjectMappingServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E7672326BEDF4A004D2EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84366E7826BADABD00AD4D75 /* CalcLeo */;
+			targetProxy = 84E7672226BEDF4A004D2EE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */ = {
@@ -472,6 +567,48 @@
 			};
 			name = Release;
 		};
+		84E7672526BEDF4A004D2EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6W248GRQS;
+				INFOPLIST_FILE = CalcLeoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.none.calcleo.CalcLeoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalcLeo.app/CalcLeo";
+			};
+			name = Debug;
+		};
+		84E7672626BEDF4A004D2EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6W248GRQS;
+				INFOPLIST_FILE = CalcLeoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.none.calcleo.CalcLeoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalcLeo.app/CalcLeo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -489,6 +626,15 @@
 			buildConfigurations = (
 				84366E8E26BADABF00AD4D75 /* Debug */,
 				84366E8F26BADABF00AD4D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E7672426BEDF4A004D2EE0 /* Build configuration list for PBXNativeTarget "CalcLeoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E7672526BEDF4A004D2EE0 /* Debug */,
+				84E7672626BEDF4A004D2EE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

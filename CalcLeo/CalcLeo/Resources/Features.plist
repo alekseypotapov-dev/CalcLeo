@@ -3,74 +3,284 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>operator</key>
-		<string>+</string>
-		<key>label</key>
-		<string>+</string>
+		<key>labelText</key>
+		<string>0</string>
+		<key>value</key>
+		<string>0</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>digit</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>0</integer>
+		<key>row</key>
+		<integer>3</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
-		<string>-</string>
-		<key>label</key>
-		<string>-</string>
+		<key>labelText</key>
+		<string>1</string>
+		<key>value</key>
+		<string>1</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>digit</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>0</integer>
+		<key>row</key>
+		<integer>2</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
-		<string>/</string>
-		<key>label</key>
-		<string>/</string>
+		<key>labelText</key>
+		<string>2</string>
+		<key>value</key>
+		<string>2</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>digit</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>1</integer>
+		<key>row</key>
+		<integer>2</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
-		<string>*</string>
-		<key>label</key>
-		<string>X</string>
+		<key>labelText</key>
+		<string>3</string>
+		<key>value</key>
+		<string>3</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>digit</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>2</integer>
+		<key>row</key>
+		<integer>2</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
-		<string>sin</string>
-		<key>label</key>
+		<key>labelText</key>
+		<string>4</string>
+		<key>value</key>
+		<string>4</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>0</integer>
+		<key>row</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>5</string>
+		<key>value</key>
+		<string>5</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>1</integer>
+		<key>row</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>6</string>
+		<key>value</key>
+		<string>6</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>2</integer>
+		<key>row</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>7</string>
+		<key>value</key>
+		<string>7</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>0</integer>
+		<key>row</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>8</string>
+		<key>value</key>
+		<string>8</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>1</integer>
+		<key>row</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>9</string>
+		<key>value</key>
+		<string>9</string>
+		<key>type</key>
+		<string>digit</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>2</integer>
+		<key>row</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>,</string>
+		<key>value</key>
+		<string>.</string>
+		<key>type</key>
+		<string>comma</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>1</integer>
+		<key>row</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>=</string>
+		<key>value</key>
+		<string>=</string>
+		<key>type</key>
+		<string>equals</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>2</integer>
+		<key>row</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>AC</string>
+		<key>value</key>
+		<string>AC</string>
+		<key>type</key>
+		<string>clear</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>3</integer>
+		<key>row</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
 		<string>sin()</string>
+		<key>value</key>
+		<string>sin</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>unary</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>3</integer>
+		<key>row</key>
+		<integer>1</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
-		<string>cos</string>
-		<key>label</key>
+		<key>labelText</key>
 		<string>cos()</string>
+		<key>value</key>
+		<string>cos</string>
 		<key>type</key>
-		<string>basic</string>
+		<string>unary</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>3</integer>
+		<key>row</key>
+		<integer>2</integer>
 	</dict>
 	<dict>
-		<key>operator</key>
+		<key>labelText</key>
 		<string>BTC</string>
-		<key>label</key>
+		<key>value</key>
 		<string>BTC</string>
 		<key>type</key>
 		<string>online</string>
 		<key>visible</key>
 		<true/>
+		<key>column</key>
+		<integer>3</integer>
+		<key>row</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>/</string>
+		<key>value</key>
+		<string>/</string>
+		<key>type</key>
+		<string>binary</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>4</integer>
+		<key>row</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>x</string>
+		<key>value</key>
+		<string>*</string>
+		<key>type</key>
+		<string>binary</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>4</integer>
+		<key>row</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>-</string>
+		<key>value</key>
+		<string>-</string>
+		<key>type</key>
+		<string>binary</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>4</integer>
+		<key>row</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>labelText</key>
+		<string>+</string>
+		<key>value</key>
+		<string>+</string>
+		<key>type</key>
+		<string>binary</string>
+		<key>visible</key>
+		<true/>
+		<key>column</key>
+		<integer>4</integer>
+		<key>row</key>
+		<integer>3</integer>
 	</dict>
 </array>
 </plist>

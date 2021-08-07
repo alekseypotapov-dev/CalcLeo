@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		84366EE526BD1A2E00AD4D75 /* MathLeo.h in Headers */ = {isa = PBXBuildFile; fileRef = 84366EE326BD1A2E00AD4D75 /* MathLeo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84366EEC26BD21AD00AD4D75 /* MathLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366EEB26BD21AD00AD4D75 /* MathLogic.swift */; };
-		848E80DC26BD23870078A6A2 /* MathLeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84366EE026BD1A2E00AD4D75 /* MathLeo.framework */; platformFilter = ios; };
-		84E00D1926BD24E300B8ECFA /* MathLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E00D1826BD24E300B8ECFA /* MathLogicTests.swift */; };
+		84E7676226BEE0EA004D2EE0 /* MathLeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84366EE026BD1A2E00AD4D75 /* MathLeo.framework */; platformFilter = ios; };
+		84E7676926BEE109004D2EE0 /* MathLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7676826BEE108004D2EE0 /* MathLogicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		848E80DD26BD23870078A6A2 /* PBXContainerItemProxy */ = {
+		84E7676326BEE0EA004D2EE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84366ED726BD1A2E00AD4D75 /* Project object */;
 			proxyType = 1;
@@ -28,9 +28,9 @@
 		84366EE326BD1A2E00AD4D75 /* MathLeo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathLeo.h; sourceTree = "<group>"; };
 		84366EE426BD1A2E00AD4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84366EEB26BD21AD00AD4D75 /* MathLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathLogic.swift; sourceTree = "<group>"; };
-		848E80D726BD23870078A6A2 /* MathLeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathLeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		848E80DB26BD23870078A6A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E00D1826BD24E300B8ECFA /* MathLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathLogicTests.swift; sourceTree = "<group>"; };
+		84E7675D26BEE0EA004D2EE0 /* MathLeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathLeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E7676126BEE0EA004D2EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E7676826BEE108004D2EE0 /* MathLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLogicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,11 +41,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		848E80D426BD23870078A6A2 /* Frameworks */ = {
+		84E7675A26BEE0EA004D2EE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848E80DC26BD23870078A6A2 /* MathLeo.framework in Frameworks */,
+				84E7676226BEE0EA004D2EE0 /* MathLeo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				84366EE226BD1A2E00AD4D75 /* MathLeo */,
-				848E80D826BD23870078A6A2 /* MathLeoTests */,
+				84E7675E26BEE0EA004D2EE0 /* MathLeoTests */,
 				84366EE126BD1A2E00AD4D75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				84366EE026BD1A2E00AD4D75 /* MathLeo.framework */,
-				848E80D726BD23870078A6A2 /* MathLeoTests.xctest */,
+				84E7675D26BEE0EA004D2EE0 /* MathLeoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,21 +80,21 @@
 			path = MathLeo;
 			sourceTree = "<group>";
 		};
-		848E80D826BD23870078A6A2 /* MathLeoTests */ = {
-			isa = PBXGroup;
-			children = (
-				84E00D1826BD24E300B8ECFA /* MathLogicTests.swift */,
-				848E80DB26BD23870078A6A2 /* Info.plist */,
-			);
-			path = MathLeoTests;
-			sourceTree = "<group>";
-		};
 		848E80F726BD23E20078A6A2 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				84366EEB26BD21AD00AD4D75 /* MathLogic.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		84E7675E26BEE0EA004D2EE0 /* MathLeoTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E7676826BEE108004D2EE0 /* MathLogicTests.swift */,
+				84E7676126BEE0EA004D2EE0 /* Info.plist */,
+			);
+			path = MathLeoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,22 +129,22 @@
 			productReference = 84366EE026BD1A2E00AD4D75 /* MathLeo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		848E80D626BD23870078A6A2 /* MathLeoTests */ = {
+		84E7675C26BEE0EA004D2EE0 /* MathLeoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 848E80E126BD23870078A6A2 /* Build configuration list for PBXNativeTarget "MathLeoTests" */;
+			buildConfigurationList = 84E7676526BEE0EA004D2EE0 /* Build configuration list for PBXNativeTarget "MathLeoTests" */;
 			buildPhases = (
-				848E80D326BD23870078A6A2 /* Sources */,
-				848E80D426BD23870078A6A2 /* Frameworks */,
-				848E80D526BD23870078A6A2 /* Resources */,
+				84E7675926BEE0EA004D2EE0 /* Sources */,
+				84E7675A26BEE0EA004D2EE0 /* Frameworks */,
+				84E7675B26BEE0EA004D2EE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				848E80DE26BD23870078A6A2 /* PBXTargetDependency */,
+				84E7676426BEE0EA004D2EE0 /* PBXTargetDependency */,
 			);
 			name = MathLeoTests;
 			productName = MathLeoTests;
-			productReference = 848E80D726BD23870078A6A2 /* MathLeoTests.xctest */;
+			productReference = 84E7675D26BEE0EA004D2EE0 /* MathLeoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -160,9 +160,8 @@
 						CreatedOnToolsVersion = 12.5.1;
 						LastSwiftMigration = 1250;
 					};
-					848E80D626BD23870078A6A2 = {
+					84E7675C26BEE0EA004D2EE0 = {
 						CreatedOnToolsVersion = 12.5.1;
-						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -180,7 +179,7 @@
 			projectRoot = "";
 			targets = (
 				84366EDF26BD1A2E00AD4D75 /* MathLeo */,
-				848E80D626BD23870078A6A2 /* MathLeoTests */,
+				84E7675C26BEE0EA004D2EE0 /* MathLeoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,7 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		848E80D526BD23870078A6A2 /* Resources */ = {
+		84E7675B26BEE0EA004D2EE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,22 +210,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		848E80D326BD23870078A6A2 /* Sources */ = {
+		84E7675926BEE0EA004D2EE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E00D1926BD24E300B8ECFA /* MathLogicTests.swift in Sources */,
+				84E7676926BEE109004D2EE0 /* MathLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		848E80DE26BD23870078A6A2 /* PBXTargetDependency */ = {
+		84E7676426BEE0EA004D2EE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
 			target = 84366EDF26BD1A2E00AD4D75 /* MathLeo */;
-			targetProxy = 848E80DD26BD23870078A6A2 /* PBXContainerItemProxy */;
+			targetProxy = 84E7676326BEE0EA004D2EE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -408,10 +407,9 @@
 			};
 			name = Release;
 		};
-		848E80DF26BD23870078A6A2 /* Debug */ = {
+		84E7676626BEE0EA004D2EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6W248GRQS;
 				INFOPLIST_FILE = MathLeoTests/Info.plist;
@@ -423,16 +421,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.mathleo.MathLeoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		848E80E026BD23870078A6A2 /* Release */ = {
+		84E7676726BEE0EA004D2EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6W248GRQS;
 				INFOPLIST_FILE = MathLeoTests/Info.plist;
@@ -470,11 +466,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		848E80E126BD23870078A6A2 /* Build configuration list for PBXNativeTarget "MathLeoTests" */ = {
+		84E7676526BEE0EA004D2EE0 /* Build configuration list for PBXNativeTarget "MathLeoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				848E80DF26BD23870078A6A2 /* Debug */,
-				848E80E026BD23870078A6A2 /* Release */,
+				84E7676626BEE0EA004D2EE0 /* Debug */,
+				84E7676726BEE0EA004D2EE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
