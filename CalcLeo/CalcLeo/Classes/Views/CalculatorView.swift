@@ -64,11 +64,19 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
             for buttonSymbol in buttonColumn {
                 let btn = UIButton(type: .custom)
                 btn.setTitle("\(buttonSymbol.labelText)", for: .normal)
-                btn.backgroundColor = .cyan
+                switch buttonSymbol.type {
+                case .digit, .comma, .equals:
+                    btn.backgroundColor = designService?.secondaryButtonBackgroundColor
+                    btn.setTitleColor(designService?.secondaryButtonTextColor, for: .normal)
+                default:
+                    btn.backgroundColor = designService?.primaryButtonBackgroundColor
+                    btn.setTitleColor(designService?.primaryButtonTextColor, for: .normal)
+                }
                 btn.isHidden = !buttonSymbol.visible
                 btn.translatesAutoresizingMaskIntoConstraints = false
                 btn.tag = buttonSymbol.id
                 btn.addTarget(self, action: #selector(buttonTap(_:)), for: .touchUpInside)
+
                 buttonArray.append(btn)
             }
 
@@ -88,11 +96,11 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     }
 
     func publishError(_ message: String) {
-
+        // tod: show alert with error
     }
 
     @objc
     func buttonTap(_ sender: UIButton) {
-        print("Button tap id: \(sender.tag)")
+        viewModel.buttonTap(with: sender.tag)
     }
 }

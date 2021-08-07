@@ -21,10 +21,10 @@ public struct DayColorScheme: ColorSchemeProtocol {
     public static var subviewBackgroundColor: UIColor { .white }
 
     public static var primaryButtonTextColor: UIColor { .black }
-    public static var primaryButtonBackgroundColor: UIColor { .black }
+    public static var primaryButtonBackgroundColor: UIColor { .orange }
 
     public static var secondaryButtonTextColor: UIColor { .black }
-    public static var secondaryButtonBackgroundColor: UIColor { .black }
+    public static var secondaryButtonBackgroundColor: UIColor { .gray }
 
     public static var labelTextBackgroundColor: UIColor { .black }
     public static var labelBackgroundColor: UIColor { .white }

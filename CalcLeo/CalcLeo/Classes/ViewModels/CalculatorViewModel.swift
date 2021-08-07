@@ -32,4 +32,8 @@ final class CalculatorViewModel {
             }
         }
     }
+
+    func buttonTap(with id: Int) {
+        
+    }
 }

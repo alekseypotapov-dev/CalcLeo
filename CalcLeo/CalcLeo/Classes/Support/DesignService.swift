@@ -10,6 +10,9 @@ protocol DesignServiceProtocol {
     var colorSetting: ColorSettingType { get set }
 
     var primaryButtonBackgroundColor: UIColor { get }
+    var secondaryButtonBackgroundColor: UIColor { get }
+    var secondaryButtonTextColor: UIColor { get }
+    var primaryButtonTextColor: UIColor { get }
     var labelTextBackgroundColor: UIColor { get }
     var labelBackgroundColor: UIColor { get }
 
@@ -41,6 +44,27 @@ struct DesignService: DesignServiceProtocol {
         switch colorSetting {
         case .day: return DayColorScheme.labelBackgroundColor
         case .night: return NightColorScheme.labelBackgroundColor
+        }
+    }
+
+    var primaryButtonTextColor: UIColor {
+        switch colorSetting {
+        case .day: return DayColorScheme.primaryButtonTextColor
+        case .night: return NightColorScheme.primaryButtonTextColor
+        }
+    }
+
+    var secondaryButtonBackgroundColor: UIColor {
+        switch colorSetting {
+        case .day: return DayColorScheme.secondaryButtonBackgroundColor
+        case .night: return NightColorScheme.secondaryButtonBackgroundColor
+        }
+    }
+
+    var secondaryButtonTextColor: UIColor {
+        switch colorSetting {
+        case .day: return DayColorScheme.secondaryButtonTextColor
+        case .night: return NightColorScheme.secondaryButtonTextColor
         }
     }
 
