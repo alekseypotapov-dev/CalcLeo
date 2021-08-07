@@ -1,15 +1,46 @@
 import UIKit
 
-protocol ColorSchemeProtocol {
+public protocol ColorSchemeProtocol {
 
-    var viewBackgroundColor: UIColor { get }
+    static var viewBackgroundColor: UIColor { get }
+    static var subviewBackgroundColor: UIColor { get }
 
-    var primaryButtonTextColor: UIColor { get }
-    var primaryButtonBackgroundColor: UIColor { get }
+    static var primaryButtonTextColor: UIColor { get }
+    static var primaryButtonBackgroundColor: UIColor { get }
 
-    var secondaryButtonTextColor: UIColor { get }
-    var secondaryButtonBackgroundColor: UIColor { get }
+    static var secondaryButtonTextColor: UIColor { get }
+    static var secondaryButtonBackgroundColor: UIColor { get }
 
-    var labelTextBackgroundColor: UIColor { get }
-    var labelBackgroundColor: UIColor { get }
+    static var labelTextBackgroundColor: UIColor { get }
+    static var labelBackgroundColor: UIColor { get }
+}
+
+public struct DayColorScheme: ColorSchemeProtocol {
+
+    public static var viewBackgroundColor: UIColor { .white }
+    public static var subviewBackgroundColor: UIColor { .white }
+
+    public static var primaryButtonTextColor: UIColor { .black }
+    public static var primaryButtonBackgroundColor: UIColor { .black }
+
+    public static var secondaryButtonTextColor: UIColor { .black }
+    public static var secondaryButtonBackgroundColor: UIColor { .black }
+
+    public static var labelTextBackgroundColor: UIColor { .black }
+    public static var labelBackgroundColor: UIColor { .white }
+}
+
+public struct NightColorScheme: ColorSchemeProtocol {
+
+    public static var viewBackgroundColor: UIColor { .black }
+    public static var subviewBackgroundColor: UIColor { .black }
+
+    public static var primaryButtonTextColor: UIColor { .white }
+    public static var primaryButtonBackgroundColor: UIColor { .white }
+
+    public static var secondaryButtonTextColor: UIColor { .white }
+    public static var secondaryButtonBackgroundColor: UIColor { .orange }
+
+    public static var labelTextBackgroundColor: UIColor { .white }
+    public static var labelBackgroundColor: UIColor { .white }
 }

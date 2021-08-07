@@ -81,6 +81,7 @@
 		84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DesignLeo.xcodeproj; path = ../../../DesignLeo/DesignLeo.xcodeproj; sourceTree = "<group>"; };
 		84E766ED26BD5BEC004D2EE0 /* MathLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MathLeo.xcodeproj; path = ../../../MathLeo/MathLeo.xcodeproj; sourceTree = "<group>"; };
+		84E766F926BD76CC004D2EE0 /* DesignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				84366E9A26BC764600AD4D75 /* CalculatorInterfaceConstructor.swift */,
+				84E766F926BD76CC004D2EE0 /* DesignService.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 				84366E9626BC74D000AD4D75 /* SettingsViewController.swift in Sources */,
 				84E00D2726BD3FC700B8ECFA /* CalculatorView.swift in Sources */,
 				84E00D2026BD36CA00B8ECFA /* NumberPadView.swift in Sources */,
+				84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
