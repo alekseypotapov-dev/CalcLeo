@@ -15,7 +15,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         containerStackView.axis = .horizontal
         containerStackView.alignment = .fill
         containerStackView.distribution = .fillEqually
-        containerStackView.spacing = 5
+        containerStackView.spacing = 2
 
         return containerStackView
     }()
@@ -39,7 +39,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     }
 
     private func setupLayout() {
-        mainHorizontalStackView.backgroundColor = .green
+        mainHorizontalStackView.backgroundColor = .white
 
         addSubview(resultLabel)
         addSubview(mainHorizontalStackView)
@@ -83,7 +83,8 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
                     btn.isHidden = !buttonFeature.visible
                     btn.translatesAutoresizingMaskIntoConstraints = false
                     btn.tag = buttonFeature.id
-                    btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+                    btn.layer.cornerRadius = 8
+                    btn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
                     btn.addTarget(self, action: #selector(self.buttonTap(_:)), for: .touchUpInside)
 
                     buttonArray.append(btn)
@@ -94,7 +95,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
                 columnStackView.axis = .vertical
                 columnStackView.alignment = .fill
                 columnStackView.distribution = .fillEqually
-                columnStackView.spacing = 5
+                columnStackView.spacing = 2
 
                 columnStackViews.append(columnStackView)
             }

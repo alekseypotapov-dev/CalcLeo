@@ -24,7 +24,7 @@ extension SettingsViewController {
 
     private func setupUI() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
 
         view.addSubview(toolbarView)
 

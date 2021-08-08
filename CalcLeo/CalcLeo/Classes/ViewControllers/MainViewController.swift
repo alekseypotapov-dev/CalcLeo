@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
         let calculator = CalculatorView()
         calculator.translatesAutoresizingMaskIntoConstraints = false
         calculator.setupUI(with: DesignService())
-        calculator.backgroundColor = .red
+        calculator.backgroundColor = .white
 
         return calculator
     }()
