@@ -1,4 +1,5 @@
 import UIKit
+import MathLeo
 
 final class CalculatorView: UIView, CalculatorViewModelDelegate {
 
@@ -55,48 +56,52 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         ])
     }
 
-    func dataUpdated(models: [[ButtonSymbol]]) {
+    func dataUpdated(models: [[Feature]]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
 
-        for arrangedSubview in mainHorizontalStackView.arrangedSubviews {
-            mainHorizontalStackView.removeArrangedSubview(arrangedSubview)
-        }
-
-        var columnStackViews = [UIStackView]()
-
-        for buttonColumn in models {
-            var buttonArray = [UIButton]()
-
-            for buttonSymbol in buttonColumn {
-                let btn = UIButton(type: .custom)
-                btn.setTitle("\(buttonSymbol.labelText)", for: .normal)
-                switch buttonSymbol.type {
-                case .digit, .comma, .equals:
-                    btn.backgroundColor = designService?.secondaryButtonBackgroundColor
-                    btn.setTitleColor(designService?.secondaryButtonTextColor, for: .normal)
-                default:
-                    btn.backgroundColor = designService?.primaryButtonBackgroundColor
-                    btn.setTitleColor(designService?.primaryButtonTextColor, for: .normal)
-                }
-                btn.isHidden = !buttonSymbol.visible
-                btn.translatesAutoresizingMaskIntoConstraints = false
-                btn.tag = buttonSymbol.id
-                btn.addTarget(self, action: #selector(buttonTap(_:)), for: .touchUpInside)
-
-                buttonArray.append(btn)
+            for arrangedSubview in self.mainHorizontalStackView.arrangedSubviews {
+                self.mainHorizontalStackView.removeArrangedSubview(arrangedSubview)
             }
 
-            let columnStackView = UIStackView(arrangedSubviews: buttonArray)
-            columnStackView.translatesAutoresizingMaskIntoConstraints = false
-            columnStackView.axis = .vertical
-            columnStackView.alignment = .fill
-            columnStackView.distribution = .fillEqually
-            columnStackView.spacing = 5
+            var columnStackViews = [UIStackView]()
 
-            columnStackViews.append(columnStackView)
-        }
+            for buttonColumn in models {
+                var buttonArray = [UIButton]()
 
-        for columnStackView in columnStackViews {
-            mainHorizontalStackView.addArrangedSubview(columnStackView)
+                for buttonFeature in buttonColumn {
+                    let btn = UIButton(type: .system)
+                    btn.setTitle("\(buttonFeature.labelText)", for: .normal)
+                    switch buttonFeature.type {
+                    case .digit, .comma, .equals:
+                        btn.backgroundColor = self.designService?.secondaryButtonBackgroundColor
+                        btn.setTitleColor(self.designService?.secondaryButtonTextColor, for: .normal)
+                    default:
+                        btn.backgroundColor = self.designService?.primaryButtonBackgroundColor
+                        btn.setTitleColor(self.designService?.primaryButtonTextColor, for: .normal)
+                    }
+                    btn.isHidden = !buttonFeature.visible
+                    btn.translatesAutoresizingMaskIntoConstraints = false
+                    btn.tag = buttonFeature.id
+                    btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+                    btn.addTarget(self, action: #selector(self.buttonTap(_:)), for: .touchUpInside)
+
+                    buttonArray.append(btn)
+                }
+
+                let columnStackView = UIStackView(arrangedSubviews: buttonArray)
+                columnStackView.translatesAutoresizingMaskIntoConstraints = false
+                columnStackView.axis = .vertical
+                columnStackView.alignment = .fill
+                columnStackView.distribution = .fillEqually
+                columnStackView.spacing = 5
+
+                columnStackViews.append(columnStackView)
+            }
+
+            for columnStackView in columnStackViews {
+                self.mainHorizontalStackView.addArrangedSubview(columnStackView)
+            }
         }
     }
 

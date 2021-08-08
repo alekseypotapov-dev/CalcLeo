@@ -1,13 +1,12 @@
-@testable import CalcLeo
+@testable import MathLeo
 import XCTest
 
 final class ObjectMappingServiceTests: XCTestCase {
 
-    func test_performMappingPlist_success() throws {
-        typealias Buttons = [[ButtonSymbol]]
-        let sut = PlistObjectMappingService<Buttons>()
+    func test_performMappingPlist_success() {
+        let sut = PlistObjectMappingService<[[Feature]]>()
 
-        var actual: ButtonSymbol?
+        var actual: Feature?
 
         guard let url = Bundle(for: type(of: self)).url(forResource: "Features-success", withExtension: "plist") else {
             XCTFail("file not found")

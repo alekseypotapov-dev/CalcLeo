@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		84366EE526BD1A2E00AD4D75 /* MathLeo.h in Headers */ = {isa = PBXBuildFile; fileRef = 84366EE326BD1A2E00AD4D75 /* MathLeo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84366EEC26BD21AD00AD4D75 /* MathLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366EEB26BD21AD00AD4D75 /* MathLogic.swift */; };
+		84366EEC26BD21AD00AD4D75 /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366EEB26BD21AD00AD4D75 /* CalcLogic.swift */; };
 		84E7676226BEE0EA004D2EE0 /* MathLeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84366EE026BD1A2E00AD4D75 /* MathLeo.framework */; platformFilter = ios; };
-		84E7676926BEE109004D2EE0 /* MathLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7676826BEE108004D2EE0 /* MathLogicTests.swift */; };
+		84E7676926BEE109004D2EE0 /* CalcLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7676826BEE108004D2EE0 /* CalcLogicTests.swift */; };
+		84E7677C26C0575E004D2EE0 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7677B26C0575E004D2EE0 /* Feature.swift */; };
+		84E7677F26C0579C004D2EE0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7677E26C0579C004D2EE0 /* String+Extension.swift */; };
+		84E7678226C05BF6004D2EE0 /* FeatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7678126C05BF6004D2EE0 /* FeatureProvider.swift */; };
+		84E7678926C05ECD004D2EE0 /* ObjectMappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */; };
+		84E7678C26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */; };
+		84E7678E26C05F08004D2EE0 /* Features-success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E7678D26C05F08004D2EE0 /* Features-success.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +33,17 @@
 		84366EE026BD1A2E00AD4D75 /* MathLeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MathLeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84366EE326BD1A2E00AD4D75 /* MathLeo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathLeo.h; sourceTree = "<group>"; };
 		84366EE426BD1A2E00AD4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84366EEB26BD21AD00AD4D75 /* MathLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathLogic.swift; sourceTree = "<group>"; };
+		84366EEB26BD21AD00AD4D75 /* CalcLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
 		84E7675D26BEE0EA004D2EE0 /* MathLeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathLeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E7676126BEE0EA004D2EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E7676826BEE108004D2EE0 /* MathLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathLogicTests.swift; sourceTree = "<group>"; };
+		84E7676826BEE108004D2EE0 /* CalcLogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcLogicTests.swift; sourceTree = "<group>"; };
+		84E7677B26C0575E004D2EE0 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		84E7677E26C0579C004D2EE0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		84E7678126C05BF6004D2EE0 /* FeatureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureProvider.swift; sourceTree = "<group>"; };
+		84E7678426C05C4B004D2EE0 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Features.plist; sourceTree = "<group>"; };
+		84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMappingService.swift; sourceTree = "<group>"; };
+		84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMappingServiceTests.swift; sourceTree = "<group>"; };
+		84E7678D26C05F08004D2EE0 /* Features-success.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Features-success.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,26 +88,49 @@
 			children = (
 				84366EE326BD1A2E00AD4D75 /* MathLeo.h */,
 				84366EE426BD1A2E00AD4D75 /* Info.plist */,
-				848E80F726BD23E20078A6A2 /* Logic */,
+				848E80F726BD23E20078A6A2 /* Core */,
+				84E7677D26C0578B004D2EE0 /* Extensions */,
+				84E7678326C05C36004D2EE0 /* Resources */,
 			);
 			path = MathLeo;
 			sourceTree = "<group>";
 		};
-		848E80F726BD23E20078A6A2 /* Logic */ = {
+		848E80F726BD23E20078A6A2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				84366EEB26BD21AD00AD4D75 /* MathLogic.swift */,
+				84366EEB26BD21AD00AD4D75 /* CalcLogic.swift */,
+				84E7677B26C0575E004D2EE0 /* Feature.swift */,
+				84E7678126C05BF6004D2EE0 /* FeatureProvider.swift */,
+				84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */,
 			);
-			path = Logic;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		84E7675E26BEE0EA004D2EE0 /* MathLeoTests */ = {
 			isa = PBXGroup;
 			children = (
-				84E7676826BEE108004D2EE0 /* MathLogicTests.swift */,
+				84E7676826BEE108004D2EE0 /* CalcLogicTests.swift */,
+				84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */,
+				84E7678D26C05F08004D2EE0 /* Features-success.plist */,
 				84E7676126BEE0EA004D2EE0 /* Info.plist */,
 			);
 			path = MathLeoTests;
+			sourceTree = "<group>";
+		};
+		84E7677D26C0578B004D2EE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84E7677E26C0579C004D2EE0 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84E7678326C05C36004D2EE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84E7678426C05C4B004D2EE0 /* Features.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E7678E26C05F08004D2EE0 /* Features-success.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84366EEC26BD21AD00AD4D75 /* MathLogic.swift in Sources */,
+				84E7678226C05BF6004D2EE0 /* FeatureProvider.swift in Sources */,
+				84366EEC26BD21AD00AD4D75 /* CalcLogic.swift in Sources */,
+				84E7677F26C0579C004D2EE0 /* String+Extension.swift in Sources */,
+				84E7678926C05ECD004D2EE0 /* ObjectMappingService.swift in Sources */,
+				84E7677C26C0575E004D2EE0 /* Feature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +255,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E7676926BEE109004D2EE0 /* MathLogicTests.swift in Sources */,
+				84E7676926BEE109004D2EE0 /* CalcLogicTests.swift in Sources */,
+				84E7678C26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

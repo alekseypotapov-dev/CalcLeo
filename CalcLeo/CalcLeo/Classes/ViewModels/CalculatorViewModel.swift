@@ -1,7 +1,8 @@
 import Foundation
+import MathLeo
 
 protocol CalculatorViewModelDelegate: AnyObject {
-    func dataUpdated(models: [[ButtonSymbol]])
+    func dataUpdated(models: [[Feature]])
     func publishError(_ message: String)
     func updateResult(with text: String)
 }
@@ -9,24 +10,29 @@ protocol CalculatorViewModelDelegate: AnyObject {
 final class CalculatorViewModel {
 
     weak var delegate: CalculatorViewModelDelegate?
-    private var plistObjectMappingService = PlistObjectMappingService<[[ButtonSymbol]]>()
-    private var buttons: [[ButtonSymbol]]? {
+    private var buttons: [[Feature]]? {
         didSet {
             guard let buttons = buttons else { return }
             delegate?.dataUpdated(models: buttons)
         }
     }
 
+    private lazy var mathLogic: CalcLogic = {
+        let mathLogic = CalcLogic(maxDisplayValueLength: 10)
+        return mathLogic
+    }()
+
+    private lazy var featureProvider: FeatureProvider = {
+        let featureProvider = FeatureProvider()
+        return featureProvider
+    }()
+
     init(delegate: CalculatorViewModelDelegate?) {
         self.delegate = delegate
     }
 
     func prepareObjects() {
-        guard let url = Bundle.main.url(forResource: "Features", withExtension: "plist") else {
-            delegate?.publishError("File not found!")
-            return
-        }
-        plistObjectMappingService.performMapping(with: url) { [weak self] result in
+        featureProvider.performMapping { [weak self] result in
             switch result {
             case .success(let objects): self?.buttons = objects
             case .failure(let error): self?.delegate?.publishError(error.localizedDescription)
@@ -38,7 +44,8 @@ final class CalculatorViewModel {
         guard let buttons = buttons else { return }
 
         if let element = (buttons.joined().first { $0.id == id }) {
-            delegate?.updateResult(with: element.value)
+            let value = mathLogic.sendElement(element)
+            delegate?.updateResult(with: value)
         }
     }
 }

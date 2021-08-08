@@ -24,8 +24,9 @@ extension SettingsViewController {
 
     private func setupUI() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(toolbarView)
         view.backgroundColor = .blue
+
+        view.addSubview(toolbarView)
 
         NSLayoutConstraint.activate([
             toolbarView.topAnchor.constraint(equalTo: view.topAnchor),
