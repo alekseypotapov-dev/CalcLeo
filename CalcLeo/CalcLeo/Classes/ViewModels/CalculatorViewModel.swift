@@ -32,7 +32,7 @@ final class CalculatorViewModel {
     }
 
     func prepareObjects() {
-        featureProvider.performMapping { [weak self] result in
+        featureProvider.provideFeatures { [weak self] result in
             switch result {
             case .success(let objects): self?.buttons = objects
             case .failure(let error): self?.delegate?.publishError(error.localizedDescription)

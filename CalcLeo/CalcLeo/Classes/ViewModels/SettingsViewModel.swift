@@ -26,7 +26,7 @@ final class SettingsViewModel {
     }
 
     func prepareObjects() {
-        featureProvider.performMapping { [weak self] result in
+        featureProvider.provideFeatures { [weak self] result in
             switch result {
             case .success(let objects): self?.buttons = objects.reduce([], +).sorted { $0.value < $1.value }
             case .failure(let error): self?.delegate?.publishError(error.localizedDescription)
