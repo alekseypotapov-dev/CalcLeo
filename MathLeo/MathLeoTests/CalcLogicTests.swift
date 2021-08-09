@@ -112,7 +112,7 @@ final class CalcLogicTests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
 
-    func test_clear_1_0() {
+    func test_clear_1AC_0() {
         var sut = CalcLogic(maxDisplayValueLength: 10)
 
         let expected = "0"

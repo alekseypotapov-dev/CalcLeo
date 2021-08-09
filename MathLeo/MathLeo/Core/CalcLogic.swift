@@ -55,8 +55,8 @@ public struct CalcLogic {
                 inputInProgress = false
             }
             performOperation(element.value)
-            if let result = accumulator {
-                currentDisplayValue = String(result)
+            if let acc = accumulator {
+                currentDisplayValue = String(acc)
             }
         case .clear:
             accumulator = 0
@@ -73,14 +73,14 @@ public struct CalcLogic {
         if let operation = operations[operation] {
             switch operation {
             case .unaryOperation(let function):
-                if accumulator != nil {
-                    accumulator = function(accumulator!)
+                if let acc = accumulator {
+                    accumulator = function(acc)
                 }
             case .binaryOperation(let function):
                 performPendingBinaryOperation()
 
-                if accumulator != nil {
-                    pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
+                if let acc = accumulator {
+                    pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: acc)
                     accumulator = nil
                 }
             case .result:
@@ -90,8 +90,8 @@ public struct CalcLogic {
     }
 
     private mutating func performPendingBinaryOperation() {
-        if pendingBinaryOperation != nil && accumulator != nil {
-            accumulator = pendingBinaryOperation?.perform(with: accumulator!)
+        if let _ = pendingBinaryOperation, let acc = accumulator {
+            accumulator = pendingBinaryOperation?.perform(with: acc)
             pendingBinaryOperation = nil
         }
     }
