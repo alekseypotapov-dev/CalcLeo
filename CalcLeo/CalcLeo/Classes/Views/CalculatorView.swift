@@ -31,10 +31,14 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         return label
     }()
 
-    func setupUI(with designService: DesignServiceProtocol) {
+    init(designService: DesignServiceProtocol) {
         self.designService = designService
+        super.init(frame: .zero)
+        self.setupLayout()
+    }
 
-        setupLayout()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     func updateView() {

@@ -1,6 +1,7 @@
 import UIKit
 
 final class SettingsFeatureTableViewCell: UITableViewCell {
+
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

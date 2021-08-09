@@ -4,6 +4,8 @@ import MathLeo
 final class SettingsViewController: UIViewController, SettingsViewModelDelegate {
 
     weak var delegate: MainViewControllerDelegate?
+    private let designService: DesignServiceProtocol
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +35,7 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
         return SettingsViewModel(delegate: self)
     }()
 
-    private var toolbarView: UIToolbar = {
+    private lazy var toolbarView: UIToolbar = {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
         toolBar.translatesAutoresizingMaskIntoConstraints = false
 
@@ -44,6 +46,32 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
 
         return toolBar
     }()
+
+    private lazy var currentColorSchemeSwitch: UISwitch = {
+        let switcher = UISwitch()
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.isOn = designService.colorSetting == .day
+        switcher.addTarget(self, action: #selector(swichColorScheme(_:)), for: .valueChanged)
+
+        return switcher
+    }()
+
+    private lazy var currentColorSchemeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Current Colorsheme: \(designService.colorSetting.rawValue)"
+
+        return label
+    }()
+
+    init(designService: DesignServiceProtocol) {
+        self.designService = designService
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,13 +99,20 @@ extension SettingsViewController {
         view.backgroundColor = .white
 
         view.addSubview(toolbarView)
+        view.addSubview(currentColorSchemeLabel)
+        view.addSubview(currentColorSchemeSwitch)
         view.addSubview(tableView)
 
         NSLayoutConstraint.activate([
             toolbarView.topAnchor.constraint(equalTo: view.topAnchor),
             toolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             toolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: toolbarView.bottomAnchor),
+            currentColorSchemeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            currentColorSchemeLabel.topAnchor.constraint(equalTo: toolbarView.bottomAnchor),
+            currentColorSchemeLabel.heightAnchor.constraint(equalToConstant: 50),
+            currentColorSchemeSwitch.centerYAnchor.constraint(equalTo: currentColorSchemeLabel.centerYAnchor),
+            currentColorSchemeSwitch.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.topAnchor.constraint(equalTo: currentColorSchemeLabel.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -95,5 +130,16 @@ extension SettingsViewController {
     @objc
     private func closeView() {
         dismiss(animated: true, completion: nil)
+    }
+
+    @objc
+    private func swichColorScheme(_ sender: UISwitch) {
+        if sender.isOn {
+            designService.switchColorSchemeTo(newColorScheme: .day)
+        } else {
+            designService.switchColorSchemeTo(newColorScheme: .night)
+        }
+
+        currentColorSchemeLabel.text = "Current Colorsheme: \(designService.colorSetting.rawValue)"
     }
 }

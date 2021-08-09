@@ -1,13 +1,13 @@
 import UIKit
 import DesignLeo
 
-enum ColorSettingType {
+enum ColorSetting: String {
     case day, night
 }
 
 protocol DesignServiceProtocol {
 
-    var colorSetting: ColorSettingType { get set }
+    var colorSetting: ColorSetting { get }
 
     var primaryButtonBackgroundColor: UIColor { get }
     var secondaryButtonBackgroundColor: UIColor { get }
@@ -19,12 +19,14 @@ protocol DesignServiceProtocol {
     var primaryTextLabelHeight: CGFloat { get }
     var primaryButtonHeight: CGFloat { get }
     var primaryButtonWidth: CGFloat { get }
+
+    func switchColorSchemeTo(newColorScheme: ColorSetting)
 }
 
-struct DesignService: DesignServiceProtocol {
+class DesignService: DesignServiceProtocol {
 
     // MARK: Colors
-    var colorSetting: ColorSettingType = .day
+    var colorSetting: ColorSetting = .day
 
     var primaryButtonBackgroundColor: UIColor {
         switch colorSetting {
@@ -72,4 +74,8 @@ struct DesignService: DesignServiceProtocol {
     var primaryTextLabelHeight: CGFloat { Style.primaryTextLabelHeight }
     var primaryButtonHeight: CGFloat { Style.primaryButtonHeight }
     var primaryButtonWidth: CGFloat { Style.primaryButtonWidth }
+
+    func switchColorSchemeTo(newColorScheme: ColorSetting) {
+        colorSetting = newColorScheme
+    }
 }

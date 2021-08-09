@@ -6,7 +6,11 @@ protocol MainViewControllerDelegate: AnyObject {
 
 final class MainViewController: UIViewController {
 
-    private let titleLabel: UILabel = {
+    private lazy var designService: DesignService = {
+        return DesignService()
+    }()
+
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "🦁 Calculator"
@@ -14,7 +18,7 @@ final class MainViewController: UIViewController {
         return label
     }()
 
-    private let settingsButton: UIButton = {
+    private lazy var settingsButton: UIButton = {
         let button = UIButton(type: .detailDisclosure)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
@@ -22,10 +26,9 @@ final class MainViewController: UIViewController {
         return button
     }()
 
-    private let calculatorView: CalculatorView = {
-        let calculator = CalculatorView()
+    private lazy var calculatorView: CalculatorView = {
+        let calculator = CalculatorView(designService: designService)
         calculator.translatesAutoresizingMaskIntoConstraints = false
-        calculator.setupUI(with: DesignService())
         calculator.updateView()
         calculator.backgroundColor = .white
 
@@ -65,7 +68,7 @@ extension MainViewController {
 
     @objc
     func openSettings() {
-        let settingsViewController = SettingsViewController()
+        let settingsViewController = SettingsViewController(designService: designService)
         settingsViewController.delegate = self
         present(settingsViewController, animated: true, completion: nil)
     }
