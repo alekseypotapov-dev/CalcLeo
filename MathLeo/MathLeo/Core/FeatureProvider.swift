@@ -2,10 +2,10 @@ import Foundation
 
 enum FeatureProviderError: Error, CustomStringConvertible {
     case notFound
+
     public var description: String {
         switch self {
-        case .notFound:
-            return "File with features wasn't found!"
+        case .notFound: return "File with features wasn't found!"
         }
     }
 }
