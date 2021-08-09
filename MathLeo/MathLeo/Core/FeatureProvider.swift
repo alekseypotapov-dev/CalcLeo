@@ -75,20 +75,5 @@ public class FeatureProvider {
             // Handle error
             print(error)
         }
-
-        //        var plist = NSMutableDictionary(contentsOfFile: plistPath)
-        //        switch operation {
-        //           case chipsOperation.add:
-        //                plistDict.setValue("Value", forKey: "Key")
-        //                break
-        //           case chipsOperation.edit:
-        //                plistDict["Key"] = "Value1"
-        //                break
-        //           case chipsOperation.delete:
-        //                plistDict.removeObject(forKey: "Key")
-        //                break
-        //        }
-        //        plistDict.write(toFile: path, atomically: true)
-
     }
 }
