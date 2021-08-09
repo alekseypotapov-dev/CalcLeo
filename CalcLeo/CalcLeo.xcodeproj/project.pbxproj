@@ -20,6 +20,7 @@
 		84E7677326BEE805004D2EE0 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7677226BEE805004D2EE0 /* CalculatorViewModel.swift */; };
 		84E767A026C1600D004D2EE0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */; };
 		84E767A226C17227004D2EE0 /* SettingsFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */; };
+		84E767A726C1A1AC004D2EE0 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		84E7677226BEE805004D2EE0 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureTableViewCell.swift; sourceTree = "<group>"; };
+		84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				84366E9226BADEA500AD4D75 /* Views */,
 				84E7677426BEE80E004D2EE0 /* ViewModels */,
 				84366E9726BC74EF00AD4D75 /* Support */,
+				84E767A526C1A198004D2EE0 /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -224,6 +227,14 @@
 				84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84E767A526C1A198004D2EE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */,
 				84366ED526BD18F900AD4D75 /* MainViewController.swift in Sources */,
 				84E7677326BEE805004D2EE0 /* CalculatorViewModel.swift in Sources */,
+				84E767A726C1A1AC004D2EE0 /* UIStackView+Extension.swift in Sources */,
 				84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */,
 				84366E9626BC74D000AD4D75 /* SettingsViewController.swift in Sources */,
 				84E00D2726BD3FC700B8ECFA /* CalculatorView.swift in Sources */,

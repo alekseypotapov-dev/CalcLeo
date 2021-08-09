@@ -1,12 +1,12 @@
-struct OnlineResponse: Decodable {
+struct OnlineResponse: Codable {
     var bpi: BPI
 }
 
-struct BPI: Decodable {
+struct BPI: Codable {
     var USD: USD
 }
 
-struct USD: Decodable {
+struct USD: Codable {
     let rate: String
     let rate_float: Float
 }

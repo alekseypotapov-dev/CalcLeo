@@ -35,6 +35,9 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         self.designService = designService
 
         setupLayout()
+    }
+
+    func updateView() {
         viewModel.prepareObjects()
     }
 
@@ -57,12 +60,8 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     }
 
     func dataUpdated(models: [[Feature]]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-
-            for arrangedSubview in self.mainHorizontalStackView.arrangedSubviews {
-                self.mainHorizontalStackView.removeArrangedSubview(arrangedSubview)
-            }
+        DispatchQueue.main.async {
+            self.mainHorizontalStackView.removeAllArrangedSubviews()
 
             var columnStackViews = [UIStackView]()
 
@@ -111,9 +110,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     }
 
     func updateResult(with text: String) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-
+        DispatchQueue.main.async {
             self.resultLabel.text = text
         }
     }

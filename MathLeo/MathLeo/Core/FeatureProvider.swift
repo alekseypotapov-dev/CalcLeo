@@ -20,19 +20,22 @@ public class FeatureProvider {
     private lazy var plistName: String = { "Features" }()
     private lazy var plistExtension: String = { "plist" }()
     private lazy var plistNameWithExtension: String = { "\(self.plistName).\(plistExtension)" }()
+    private lazy var plistPath: String? = {
+        guard let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return nil }
+        return paths.appending("/\(plistNameWithExtension)")
+    }()
 
     private func copyPlistFileToDocumentsDirectoryIfNeeded() throws {
-        guard let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
-            throw FeatureProviderError.noSearchPathsForDirectories
+        guard let plistPath = plistPath else {
+            throw(FeatureProviderError.noSearchPathsForDirectories)
         }
 
-        let path = paths.appending("/\(plistNameWithExtension)")
         let fileManager = FileManager.default
-        if !fileManager.fileExists(atPath: path) {
+        if !fileManager.fileExists(atPath: plistPath) {
             guard let bundlePath = Bundle(for: type(of: self)).path(forResource: plistName, ofType: plistExtension) else {
                 throw FeatureProviderError.fileNotFound
             }
-            try fileManager.copyItem(atPath: bundlePath, toPath: path)
+            try fileManager.copyItem(atPath: bundlePath, toPath: plistPath)
         }
     }
 
@@ -43,18 +46,49 @@ public class FeatureProvider {
             callback(.failure(error))
         }
 
-        guard let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
-            callback(.failure(FeatureProviderError.fileNotFound))
+        guard let plistPath = plistPath else {
+            callback(.failure(FeatureProviderError.noSearchPathsForDirectories))
             return
         }
-        let path = paths.appending("/\(plistNameWithExtension)")
 
         do {
-            let url = URL(fileURLWithPath: path)
+            let url = URL(fileURLWithPath: plistPath)
             let data = try Data(contentsOf: url)
             plistObjectMappingService.performMapping(with: data, callback: callback)
         } catch {
             callback(.failure(error))
         }
+    }
+
+    public func writeToFeaturePlist(with features: [[Feature]]) {
+        guard let plistPath = plistPath else {
+            return
+        }
+
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
+        do {
+            let data = try encoder.encode(features)
+            let url = URL(fileURLWithPath: plistPath)
+            try data.write(to: url)
+        } catch {
+            // Handle error
+            print(error)
+        }
+
+        //        var plist = NSMutableDictionary(contentsOfFile: plistPath)
+        //        switch operation {
+        //           case chipsOperation.add:
+        //                plistDict.setValue("Value", forKey: "Key")
+        //                break
+        //           case chipsOperation.edit:
+        //                plistDict["Key"] = "Value1"
+        //                break
+        //           case chipsOperation.delete:
+        //                plistDict.removeObject(forKey: "Key")
+        //                break
+        //        }
+        //        plistDict.write(toFile: path, atomically: true)
+
     }
 }

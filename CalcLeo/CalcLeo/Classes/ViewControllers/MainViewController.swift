@@ -1,5 +1,9 @@
 import UIKit
 
+protocol MainViewControllerDelegate: AnyObject {
+    func applySettings()
+}
+
 final class MainViewController: UIViewController {
 
     private let titleLabel: UILabel = {
@@ -22,6 +26,7 @@ final class MainViewController: UIViewController {
         let calculator = CalculatorView()
         calculator.translatesAutoresizingMaskIntoConstraints = false
         calculator.setupUI(with: DesignService())
+        calculator.updateView()
         calculator.backgroundColor = .white
 
         return calculator
@@ -61,6 +66,14 @@ extension MainViewController {
     @objc
     func openSettings() {
         let settingsViewController = SettingsViewController()
+        settingsViewController.delegate = self
         present(settingsViewController, animated: true, completion: nil)
+    }
+}
+
+extension MainViewController: MainViewControllerDelegate {
+
+    func applySettings() {
+        calculatorView.updateView()
     }
 }

@@ -3,6 +3,7 @@ import MathLeo
 
 final class SettingsViewController: UIViewController, SettingsViewModelDelegate {
 
+    weak var delegate: MainViewControllerDelegate?
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +21,9 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
             }
             cell.titleLabel.text = feature.labelText
             cell.featureSwitch.isOn = feature.visible
+            cell.switchStateCallback = { isOn in
+                self.viewModel.updateFeature(with: feature.id, visible: isOn)
+            }
             return cell
         }
         return dataSource
@@ -33,9 +37,10 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
         toolBar.translatesAutoresizingMaskIntoConstraints = false
 
+        let closeBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: nil, action: #selector(closeView))
         let flexibleSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: #selector(closeView))
-        toolBar.setItems([flexibleSpaceItem, doneBarButtonItem], animated: false)
+        let saveBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: nil, action: #selector(saveAndCloseView))
+        toolBar.setItems([closeBarButtonItem, flexibleSpaceItem, saveBarButtonItem], animated: false)
 
         return toolBar
     }()
@@ -79,7 +84,16 @@ extension SettingsViewController {
         ])
     }
 
-    @objc private func closeView() {
+    @objc
+    private func saveAndCloseView() {
+        viewModel.updateFeaturesList()
+        dismiss(animated: true) {
+            self.delegate?.applySettings()
+        }
+    }
+
+    @objc
+    private func closeView() {
         dismiss(animated: true, completion: nil)
     }
 }

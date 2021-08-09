@@ -13,4 +13,13 @@ final class FeatureProviderTests: XCTestCase {
             }
         }
     }
+
+    func test_writePlistFile() {
+        let sut = FeatureProvider()
+
+        let features = [[Feature(labelText: "0", value: "0", type: .digit, visible: true, id: 0)]]
+        sut.writeToFeaturePlist(with: features)
+
+        XCTAssertTrue(true)
+    }
 }

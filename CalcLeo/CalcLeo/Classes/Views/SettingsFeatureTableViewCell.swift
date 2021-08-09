@@ -11,10 +11,12 @@ final class SettingsFeatureTableViewCell: UITableViewCell {
     lazy var featureSwitch: UISwitch = {
         let featureSwitch = UISwitch()
         featureSwitch.translatesAutoresizingMaskIntoConstraints = false
-        featureSwitch.addTarget(self, action: #selector(switchValueChange), for: .valueChanged)
+        featureSwitch.addTarget(self, action: #selector(switchValueChange(_:)), for: .valueChanged)
 
         return featureSwitch
     }()
+
+    var switchStateCallback:((Bool) -> (Void))?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,7 +39,7 @@ final class SettingsFeatureTableViewCell: UITableViewCell {
     }
 
     @objc
-    func switchValueChange() {
-
+    private func switchValueChange(_ sender: UISwitch) {
+        switchStateCallback?(sender.isOn)
     }
 }
