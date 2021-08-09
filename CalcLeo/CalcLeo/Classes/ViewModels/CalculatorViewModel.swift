@@ -44,8 +44,9 @@ final class CalculatorViewModel {
         guard let buttons = buttons else { return }
 
         if let element = (buttons.joined().first { $0.id == id }) {
-            let value = mathLogic.sendElement(element)
-            delegate?.updateResult(with: value)
+            mathLogic.maintain(element) { [weak self] result in
+                self?.delegate?.updateResult(with: result)
+            }
         }
     }
 }

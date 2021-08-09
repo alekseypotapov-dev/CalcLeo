@@ -24,7 +24,12 @@ public class FeatureProvider {
             callback(.failure(FeatureProviderError.notFound))
             return
         }
-        
-        plistObjectMappingService.performMapping(with: url, callback: callback)
+
+        do {
+            let data = try Data(contentsOf: url)
+            plistObjectMappingService.performMapping(with: data, callback: callback)
+        } catch {
+            callback(.failure(error))
+        }
     }
 }

@@ -18,6 +18,11 @@
 		84E7678C26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */; };
 		84E7678E26C05F08004D2EE0 /* Features-success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E7678D26C05F08004D2EE0 /* Features-success.plist */; };
 		84E7679226C06E67004D2EE0 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E7678426C05C4B004D2EE0 /* Features.plist */; };
+		84E7679526C1261C004D2EE0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679426C1261C004D2EE0 /* NetworkService.swift */; };
+		84E7679726C12666004D2EE0 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679626C12666004D2EE0 /* RequestService.swift */; };
+		84E7679926C129AB004D2EE0 /* BPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679826C129AB004D2EE0 /* BPI.swift */; };
+		84E7679B26C12DD1004D2EE0 /* Cryptocurrency.json in Resources */ = {isa = PBXBuildFile; fileRef = 84E7679A26C12DD0004D2EE0 /* Cryptocurrency.json */; };
+		84E7679E26C13523004D2EE0 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679D26C13522004D2EE0 /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMappingService.swift; sourceTree = "<group>"; };
 		84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMappingServiceTests.swift; sourceTree = "<group>"; };
 		84E7678D26C05F08004D2EE0 /* Features-success.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Features-success.plist"; sourceTree = "<group>"; };
+		84E7679426C1261C004D2EE0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		84E7679626C12666004D2EE0 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		84E7679826C129AB004D2EE0 /* BPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPI.swift; sourceTree = "<group>"; };
+		84E7679A26C12DD0004D2EE0 /* Cryptocurrency.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cryptocurrency.json; sourceTree = "<group>"; };
+		84E7679D26C13522004D2EE0 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +99,10 @@
 			children = (
 				84366EE326BD1A2E00AD4D75 /* MathLeo.h */,
 				84366EE426BD1A2E00AD4D75 /* Info.plist */,
+				84E7679C26C13080004D2EE0 /* Models */,
 				848E80F726BD23E20078A6A2 /* Core */,
 				84E7677D26C0578B004D2EE0 /* Extensions */,
+				84E7679326C12605004D2EE0 /* Services */,
 				84E7678326C05C36004D2EE0 /* Resources */,
 			);
 			path = MathLeo;
@@ -100,9 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				84366EEB26BD21AD00AD4D75 /* CalcLogic.swift */,
-				84E7677B26C0575E004D2EE0 /* Feature.swift */,
 				84E7678126C05BF6004D2EE0 /* FeatureProvider.swift */,
-				84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -112,6 +122,8 @@
 			children = (
 				84E7676826BEE108004D2EE0 /* CalcLogicTests.swift */,
 				84E7678B26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift */,
+				84E7679D26C13522004D2EE0 /* NetworkServiceTests.swift */,
+				84E7679A26C12DD0004D2EE0 /* Cryptocurrency.json */,
 				84E7678D26C05F08004D2EE0 /* Features-success.plist */,
 				84E7676126BEE0EA004D2EE0 /* Info.plist */,
 			);
@@ -132,6 +144,25 @@
 				84E7678426C05C4B004D2EE0 /* Features.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		84E7679326C12605004D2EE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84E7679426C1261C004D2EE0 /* NetworkService.swift */,
+				84E7679626C12666004D2EE0 /* RequestService.swift */,
+				84E7678826C05ECD004D2EE0 /* ObjectMappingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84E7679C26C13080004D2EE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84E7677B26C0575E004D2EE0 /* Feature.swift */,
+				84E7679826C129AB004D2EE0 /* BPI.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E7678E26C05F08004D2EE0 /* Features-success.plist in Resources */,
+				84E7679B26C12DD1004D2EE0 /* Cryptocurrency.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E7679726C12666004D2EE0 /* RequestService.swift in Sources */,
 				84E7678226C05BF6004D2EE0 /* FeatureProvider.swift in Sources */,
 				84366EEC26BD21AD00AD4D75 /* CalcLogic.swift in Sources */,
 				84E7677F26C0579C004D2EE0 /* String+Extension.swift in Sources */,
 				84E7678926C05ECD004D2EE0 /* ObjectMappingService.swift in Sources */,
+				84E7679926C129AB004D2EE0 /* BPI.swift in Sources */,
+				84E7679526C1261C004D2EE0 /* NetworkService.swift in Sources */,
 				84E7677C26C0575E004D2EE0 /* Feature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E7676926BEE109004D2EE0 /* CalcLogicTests.swift in Sources */,
+				84E7679E26C13523004D2EE0 /* NetworkServiceTests.swift in Sources */,
 				84E7678C26C05EDF004D2EE0 /* ObjectMappingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

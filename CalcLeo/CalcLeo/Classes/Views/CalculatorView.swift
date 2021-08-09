@@ -111,7 +111,11 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     }
 
     func updateResult(with text: String) {
-        resultLabel.text = text
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+
+            self.resultLabel.text = text
+        }
     }
 
     @objc

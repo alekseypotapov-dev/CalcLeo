@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CalcLogic {
+public class CalcLogic {
 
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
@@ -31,7 +31,7 @@ public struct CalcLogic {
     static private func sinDeg(_ degrees: Double) -> Double { sin(degrees * .pi / 180.0) }
     static private func cosDeg(_ degrees: Double) -> Double { cos(degrees * .pi / 180.0) }
 
-    public mutating func sendElement(_ element: Feature) -> String {
+    public func maintain(_ element: Feature, with completionHandler: @escaping (String) -> Void) {
         switch element.type {
         case .comma:
             if !inputInProgress {
@@ -40,6 +40,7 @@ public struct CalcLogic {
             } else if currentDisplayValue.range(of: ".") == nil {
                 currentDisplayValue.append(".")
             }
+            completionHandler(currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero())
         case .digit:
             if !inputInProgress {
                 currentDisplayValue = element.value
@@ -49,6 +50,7 @@ public struct CalcLogic {
             } else if inputInProgress {
                 currentDisplayValue += element.value
             }
+            completionHandler(currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero())
         case .binary, .unary, .equals:
             if inputInProgress {
                 accumulator = Double(currentDisplayValue)
@@ -58,18 +60,36 @@ public struct CalcLogic {
             if let acc = accumulator {
                 currentDisplayValue = String(acc)
             }
+            completionHandler(currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero())
         case .clear:
             accumulator = 0
             currentDisplayValue = "0"
+            completionHandler(currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero())
         case .online:
-            accumulator = 0
-            currentDisplayValue = "0"
-        }
+            performOnlineOperation(with: element.value) { [weak self] value, errorString in
+                guard let self = self else {
+                    completionHandler("0")
+                    return
+                }
+                if let errorString = errorString {
+                    self.inputInProgress = false
+                    self.accumulator = 0
+                    self.currentDisplayValue = errorString
+                    completionHandler(self.currentDisplayValue)
+                    return
+                }
 
-        return currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero()
+                self.accumulator = (Double(self.currentDisplayValue) ?? 1) * Double(value)
+                self.inputInProgress = false
+                if let acc = self.accumulator {
+                    self.currentDisplayValue = String(acc)
+                }
+                completionHandler(self.currentDisplayValue.setMaxLength(of: self.maxDisplayValueLength).removeAfterPointIfZero())
+            }
+        }
     }
 
-    private mutating func performOperation(_ operation: String) {
+    private func performOperation(_ operation: String) {
         if let operation = operations[operation] {
             switch operation {
             case .unaryOperation(let function):
@@ -89,7 +109,31 @@ public struct CalcLogic {
         }
     }
 
-    private mutating func performPendingBinaryOperation() {
+    // todo: this needs an upgrade
+    func performOnlineOperation(with cryptoCurrency: String, completionHandler: @escaping (Float, String?) -> Void) {
+        guard NetworkService.isAvailable else {
+            return completionHandler(0, "no network")
+        }
+
+        let stringUrl = "https://api.coindesk.com/v1/bpi/currentprice/" + cryptoCurrency
+
+        let request = RequestService()
+        request.requestData(with: stringUrl) { result in
+            switch result {
+            case .success(let data):
+                let service = JsonObjectMappingService<OnlineResponse>()
+                service.performMapping(with: data) { result in
+                    switch result {
+                    case .success(let onlineResponse): return completionHandler(onlineResponse.bpi.USD.rate_float, nil)
+                    case .failure(let error): return completionHandler(0, error.localizedDescription)
+                    }
+                }
+            case .failure(let error): completionHandler(0, error.localizedDescription)
+            }
+        }
+    }
+
+    private func performPendingBinaryOperation() {
         if let _ = pendingBinaryOperation, let acc = accumulator {
             accumulator = pendingBinaryOperation?.perform(with: acc)
             pendingBinaryOperation = nil
