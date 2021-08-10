@@ -187,7 +187,6 @@
 			children = (
 				84366E7C26BADABD00AD4D75 /* AppDelegate.swift */,
 				84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */,
-				84E00D2826BD3FDD00B8ECFA /* ViewControllers */,
 				84366E9226BADEA500AD4D75 /* Views */,
 				84E7677426BEE80E004D2EE0 /* ViewModels */,
 				84366E9726BC74EF00AD4D75 /* Support */,
@@ -210,6 +209,8 @@
 		84366E9226BADEA500AD4D75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84366ED426BD18F900AD4D75 /* MainViewController.swift */,
+				84366E9526BC74D000AD4D75 /* SettingsViewController.swift */,
 				84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */,
 				84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */,
 			);
@@ -222,15 +223,6 @@
 				84E766F926BD76CC004D2EE0 /* DesignService.swift */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		84E00D2826BD3FDD00B8ECFA /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				84366ED426BD18F900AD4D75 /* MainViewController.swift */,
-				84366E9526BC74D000AD4D75 /* SettingsViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		84E766E626BD5BB3004D2EE0 /* Frameworks */ = {
