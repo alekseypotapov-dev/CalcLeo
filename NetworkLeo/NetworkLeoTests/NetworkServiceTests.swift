@@ -1,5 +1,5 @@
-@testable import MathLeo
 import XCTest
+@testable import NetworkLeo
 
 final class NetworkServiceTests: XCTestCase {
 

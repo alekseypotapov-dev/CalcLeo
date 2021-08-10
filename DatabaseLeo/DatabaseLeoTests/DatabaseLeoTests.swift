@@ -1,5 +1,5 @@
-@testable import DatabaseLeo
 import XCTest
+@testable import DatabaseLeo
 
 final class DatabaseManagerTests: XCTestCase {
 

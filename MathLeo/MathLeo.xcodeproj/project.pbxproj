@@ -55,7 +55,7 @@
 		84E7679626C12666004D2EE0 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		84E7679826C129AB004D2EE0 /* BPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPI.swift; sourceTree = "<group>"; };
 		84E7679A26C12DD0004D2EE0 /* Cryptocurrency.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cryptocurrency.json; sourceTree = "<group>"; };
-		84E7679D26C13522004D2EE0 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		84E7679D26C13522004D2EE0 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkServiceTests.swift; path = ../../NetworkLeo/NetworkLeoTests/NetworkServiceTests.swift; sourceTree = "<group>"; };
 		84E767A326C186E9004D2EE0 /* FeatureProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

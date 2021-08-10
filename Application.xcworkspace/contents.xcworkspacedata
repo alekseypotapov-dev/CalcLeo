@@ -16,4 +16,7 @@
    <FileRef
       location = "group:CodableLeo/CodableLeo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:NetworkLeo/NetworkLeo.xcodeproj">
+   </FileRef>
 </Workspace>
