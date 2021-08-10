@@ -32,75 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		849EF31F26C2D21B0091B1A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E768B626C2BD81004D2EE0;
-			remoteInfo = MathLogicLeo;
-		};
-		849EF32126C2D21B0091B1A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E768BF26C2BD81004D2EE0;
-			remoteInfo = MathLogicLeoTests;
-		};
-		84E766EB26BD5BE3004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 848E80EC26BD23C60078A6A2;
-			remoteInfo = DesignLeo;
-		};
 		84E7672226BEDF4A004D2EE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84366E7126BADABD00AD4D75 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 84366E7826BADABD00AD4D75;
 			remoteInfo = CalcLeo;
-		};
-		84E7680C26C2A749004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E767E626C292EB004D2EE0;
-			remoteInfo = DatabaseLeo;
-		};
-		84E7680E26C2A749004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E767EF26C292EB004D2EE0;
-			remoteInfo = DatabaseLeoTests;
-		};
-		84E7686F26C2AF9F004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E7684526C2A90E004D2EE0;
-			remoteInfo = CodableLeo;
-		};
-		84E7687126C2AF9F004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E7684E26C2A90F004D2EE0;
-			remoteInfo = CodableLeoTests;
-		};
-		84E768A126C2B337004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7689C26C2B337004D2EE0 /* NetworkLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E7688226C2B312004D2EE0;
-			remoteInfo = NetworkLeo;
-		};
-		84E768A326C2B337004D2EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84E7689C26C2B337004D2EE0 /* NetworkLeo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84E7688B26C2B312004D2EE0;
-			remoteInfo = NetworkLeoTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -113,11 +50,9 @@
 		84366E8A26BADABF00AD4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84366E9526BC74D000AD4D75 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84366ED426BD18F900AD4D75 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MathLogicLeo.xcodeproj; path = ../../../MathLogicLeo/MathLogicLeo.xcodeproj; sourceTree = "<group>"; };
 		849EF33226C2E2DF0091B1A3 /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
 		849EF33426C2E44C0091B1A3 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
-		84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DesignLeo.xcodeproj; path = ../../../DesignLeo/DesignLeo.xcodeproj; sourceTree = "<group>"; };
 		84E766F926BD76CC004D2EE0 /* DesignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignService.swift; sourceTree = "<group>"; };
 		84E7671D26BEDF4A004D2EE0 /* CalcLeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcLeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E7672126BEDF4A004D2EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,9 +60,6 @@
 		84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureTableViewCell.swift; sourceTree = "<group>"; };
 		84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DatabaseLeo.xcodeproj; path = ../../../DatabaseLeo/DatabaseLeo.xcodeproj; sourceTree = "<group>"; };
-		84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodableLeo.xcodeproj; path = ../../../CodableLeo/CodableLeo.xcodeproj; sourceTree = "<group>"; };
-		84E7689C26C2B337004D2EE0 /* NetworkLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkLeo.xcodeproj; path = ../../../NetworkLeo/NetworkLeo.xcodeproj; sourceTree = "<group>"; };
 		84E768F726C2D147004D2EE0 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		84E768F826C2D148004D2EE0 /* OnlineResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineResponse.swift; sourceTree = "<group>"; };
 		84E768FB26C2D156004D2EE0 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Features.plist; sourceTree = "<group>"; };
@@ -200,7 +132,6 @@
 		84366E9126BADDD400AD4D75 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84E766E626BD5BB3004D2EE0 /* Frameworks */,
 				84366E8526BADABF00AD4D75 /* Assets.xcassets */,
 				84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */,
 				84366E8A26BADABF00AD4D75 /* Info.plist */,
@@ -229,35 +160,6 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		849EF31626C2D21B0091B1A3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				849EF32026C2D21B0091B1A3 /* MathLogicLeo.framework */,
-				849EF32226C2D21B0091B1A3 /* MathLogicLeoTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		84E766E626BD5BB3004D2EE0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */,
-				84E7689C26C2B337004D2EE0 /* NetworkLeo.xcodeproj */,
-				84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */,
-				84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */,
-				84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		84E766E826BD5BE3004D2EE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				84E766EC26BD5BE3004D2EE0 /* DesignLeo.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		84E7671E26BEDF4A004D2EE0 /* CalcLeoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,33 +184,6 @@
 				84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		84E7680826C2A749004D2EE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				84E7680D26C2A749004D2EE0 /* DatabaseLeo.framework */,
-				84E7680F26C2A749004D2EE0 /* DatabaseLeoTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		84E7686B26C2AF9F004D2EE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */,
-				84E7687226C2AF9F004D2EE0 /* CodableLeoTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		84E7689D26C2B337004D2EE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				84E768A226C2B337004D2EE0 /* NetworkLeo.framework */,
-				84E768A426C2B337004D2EE0 /* NetworkLeoTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		84E768F626C2D13F004D2EE0 /* Models */ = {
@@ -401,28 +276,6 @@
 			);
 			productRefGroup = 84366E7A26BADABD00AD4D75 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 84E7686B26C2AF9F004D2EE0 /* Products */;
-					ProjectRef = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
-				},
-				{
-					ProductGroup = 84E7680826C2A749004D2EE0 /* Products */;
-					ProjectRef = 84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */;
-				},
-				{
-					ProductGroup = 84E766E826BD5BE3004D2EE0 /* Products */;
-					ProjectRef = 84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */;
-				},
-				{
-					ProductGroup = 849EF31626C2D21B0091B1A3 /* Products */;
-					ProjectRef = 849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */;
-				},
-				{
-					ProductGroup = 84E7689D26C2B337004D2EE0 /* Products */;
-					ProjectRef = 84E7689C26C2B337004D2EE0 /* NetworkLeo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				84366E7826BADABD00AD4D75 /* CalcLeo */,
@@ -430,72 +283,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		849EF32026C2D21B0091B1A3 /* MathLogicLeo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MathLogicLeo.framework;
-			remoteRef = 849EF31F26C2D21B0091B1A3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		849EF32226C2D21B0091B1A3 /* MathLogicLeoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MathLogicLeoTests.xctest;
-			remoteRef = 849EF32126C2D21B0091B1A3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E766EC26BD5BE3004D2EE0 /* DesignLeo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DesignLeo.framework;
-			remoteRef = 84E766EB26BD5BE3004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E7680D26C2A749004D2EE0 /* DatabaseLeo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DatabaseLeo.framework;
-			remoteRef = 84E7680C26C2A749004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E7680F26C2A749004D2EE0 /* DatabaseLeoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DatabaseLeoTests.xctest;
-			remoteRef = 84E7680E26C2A749004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CodableLeo.framework;
-			remoteRef = 84E7686F26C2AF9F004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E7687226C2AF9F004D2EE0 /* CodableLeoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CodableLeoTests.xctest;
-			remoteRef = 84E7687126C2AF9F004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E768A226C2B337004D2EE0 /* NetworkLeo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NetworkLeo.framework;
-			remoteRef = 84E768A126C2B337004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84E768A426C2B337004D2EE0 /* NetworkLeoTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = NetworkLeoTests.xctest;
-			remoteRef = 84E768A326C2B337004D2EE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84366E7726BADABD00AD4D75 /* Resources */ = {
