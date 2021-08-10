@@ -1,25 +1,25 @@
 import Foundation
 
-enum ObjectMappingManagerError: Error, CustomStringConvertible {
+public enum ObjectMappingManagerError: Error, CustomStringConvertible {
     case notImplemented
 
-    var description: String {
+    public var description: String {
         switch self {
         case .notImplemented: return "Function not implemented"
         }
     }
 }
 
-protocol ObjectMappingManagerProtocol {
+public protocol ObjectMappingManagerProtocol {
     associatedtype Object: Codable
 
     func decode(_ data: Data) throws -> Object
     func encode(_ object: Object) throws -> Data
 }
 
-struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
+public struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
 
-    func decode(_ data: Data) throws -> Object {
+    public func decode(_ data: Data) throws -> Object {
         let decoder = PropertyListDecoder()
 
         let result = try decoder.decode(Object.self, from: data)
@@ -27,7 +27,7 @@ struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol 
         return result
     }
 
-    func encode(_ object: Object) throws -> Data {
+    public func encode(_ object: Object) throws -> Data {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
 
@@ -37,16 +37,16 @@ struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol 
     }
 }
 
-struct JsonObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
+public struct JsonObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
 
-    func decode(_ data: Data) throws -> Object {
+    public func decode(_ data: Data) throws -> Object {
         let decoder = JSONDecoder()
 
         let result = try decoder.decode(Object.self, from: data)
         return result
     }
 
-    func encode(_ object: Object) throws -> Data {
+    public func encode(_ object: Object) throws -> Data {
         throw ObjectMappingManagerError.notImplemented
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-enum DatabaseManagerError: Error, CustomStringConvertible {
+public enum DatabaseManagerError: Error, CustomStringConvertible {
     case fileNotFound
     case fileNotFoundInDocumentDirectory
 
