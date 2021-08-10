@@ -7,7 +7,7 @@
 4. User Interface: 
     - [x] Responsive and adaptive UI (iPhone and iPad friendly)
     - [x] Simple color scheme switch
-    - [x] Feature switch: you change the visibility for each buttn thanks to UIStackViews (in Settings)
+    - [x] Feature switch - change the visibility for each button, thanks to UIStackView
     - [x] Error handling (functions "throw" where passible)
 5. Modularity thanks to Swift Package Management (covered with tests):
     - [MathLogicLeo](https://github.com/alekseypotapov-dev/MathLogicLeo) stands for math operations
