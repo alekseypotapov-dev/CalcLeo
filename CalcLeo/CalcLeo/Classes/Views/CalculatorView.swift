@@ -3,7 +3,7 @@ import MathLeo
 
 final class CalculatorView: UIView, CalculatorViewModelDelegate {
 
-    var designService: DesignServiceProtocol?
+    var designService: DesignServiceProtocol
 
     private lazy var viewModel: CalculatorViewModel = {
         return CalculatorViewModel(delegate: self)
@@ -23,7 +23,6 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
     private lazy var resultLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = designService?.labelBackgroundColor
         label.font = UIFont.systemFont(ofSize: 60)
         label.text = "0"
         label.textAlignment = .right
@@ -35,6 +34,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         self.designService = designService
         super.init(frame: .zero)
         self.setupLayout()
+        self.setupUI()
     }
 
     required init?(coder: NSCoder) {
@@ -43,11 +43,10 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
 
     func updateView() {
         viewModel.prepareObjects()
+        setupUI()
     }
 
     private func setupLayout() {
-        mainHorizontalStackView.backgroundColor = .white
-
         addSubview(resultLabel)
         addSubview(mainHorizontalStackView)
 
@@ -61,6 +60,13 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
             mainHorizontalStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             mainHorizontalStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
         ])
+    }
+
+    private func setupUI() {
+        resultLabel.backgroundColor = designService.labelBackgroundColor
+        resultLabel.textColor = designService.labelTextColor
+        backgroundColor = designService.viewBackgroundColor
+        mainHorizontalStackView.backgroundColor = designService.subviewBackgroundColor
     }
 
     func dataUpdated(models: [[Feature]]) {
@@ -77,11 +83,11 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
                     btn.setTitle("\(buttonFeature.labelText)", for: .normal)
                     switch buttonFeature.type {
                     case .digit, .comma, .equals:
-                        btn.backgroundColor = self.designService?.secondaryButtonBackgroundColor
-                        btn.setTitleColor(self.designService?.secondaryButtonTextColor, for: .normal)
+                        btn.backgroundColor = self.designService.secondaryButtonBackgroundColor
+                        btn.setTitleColor(self.designService.secondaryButtonTextColor, for: .normal)
                     default:
-                        btn.backgroundColor = self.designService?.primaryButtonBackgroundColor
-                        btn.setTitleColor(self.designService?.primaryButtonTextColor, for: .normal)
+                        btn.backgroundColor = self.designService.primaryButtonBackgroundColor
+                        btn.setTitleColor(self.designService.primaryButtonTextColor, for: .normal)
                     }
                     btn.isHidden = !buttonFeature.visible
                     btn.translatesAutoresizingMaskIntoConstraints = false
@@ -94,6 +100,7 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
                 }
 
                 let columnStackView = UIStackView(arrangedSubviews: buttonArray)
+                columnStackView.backgroundColor = self.designService.subviewBackgroundColor
                 columnStackView.translatesAutoresizingMaskIntoConstraints = false
                 columnStackView.axis = .vertical
                 columnStackView.alignment = .fill

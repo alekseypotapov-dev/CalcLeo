@@ -30,7 +30,6 @@ final class MainViewController: UIViewController {
         let calculator = CalculatorView(designService: designService)
         calculator.translatesAutoresizingMaskIntoConstraints = false
         calculator.updateView()
-        calculator.backgroundColor = .white
 
         return calculator
     }()
@@ -38,15 +37,15 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupLayout()
         setupUI()
     }
 }
 
 extension MainViewController {
 
-    private func setupUI() {
+    private func setupLayout() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
 
         view.addSubview(titleLabel)
         view.addSubview(settingsButton)
@@ -66,6 +65,12 @@ extension MainViewController {
         ])
     }
 
+    private func setupUI() {
+        view.backgroundColor = designService.viewBackgroundColor
+        titleLabel.backgroundColor = designService.subviewBackgroundColor
+        titleLabel.textColor = designService.labelTextColor
+    }
+
     @objc
     func openSettings() {
         let settingsViewController = SettingsViewController(designService: designService)
@@ -77,6 +82,7 @@ extension MainViewController {
 extension MainViewController: MainViewControllerDelegate {
 
     func applySettings() {
+        setupUI()
         calculatorView.updateView()
     }
 }

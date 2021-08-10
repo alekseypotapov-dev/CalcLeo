@@ -11,7 +11,7 @@ public protocol ColorSchemeProtocol {
     static var secondaryButtonTextColor: UIColor { get }
     static var secondaryButtonBackgroundColor: UIColor { get }
 
-    static var labelTextBackgroundColor: UIColor { get }
+    static var labelTextColor: UIColor { get }
     static var labelBackgroundColor: UIColor { get }
 }
 
@@ -26,7 +26,7 @@ public struct DayColorScheme: ColorSchemeProtocol {
     public static var secondaryButtonTextColor: UIColor { .black }
     public static var secondaryButtonBackgroundColor: UIColor { .gray }
 
-    public static var labelTextBackgroundColor: UIColor { .black }
+    public static var labelTextColor: UIColor { .black }
     public static var labelBackgroundColor: UIColor { .white }
 }
 
@@ -36,11 +36,11 @@ public struct NightColorScheme: ColorSchemeProtocol {
     public static var subviewBackgroundColor: UIColor { .black }
 
     public static var primaryButtonTextColor: UIColor { .white }
-    public static var primaryButtonBackgroundColor: UIColor { .white }
+    public static var primaryButtonBackgroundColor: UIColor { .orange }
 
     public static var secondaryButtonTextColor: UIColor { .white }
-    public static var secondaryButtonBackgroundColor: UIColor { .orange }
+    public static var secondaryButtonBackgroundColor: UIColor { .gray }
 
-    public static var labelTextBackgroundColor: UIColor { .white }
-    public static var labelBackgroundColor: UIColor { .white }
+    public static var labelTextColor: UIColor { .white }
+    public static var labelBackgroundColor: UIColor { .black }
 }

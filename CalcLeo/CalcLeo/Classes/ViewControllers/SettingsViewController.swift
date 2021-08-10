@@ -17,8 +17,9 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
     }()
 
     private lazy var tableViewDataSource: UITableViewDiffableDataSource<Int, Feature> = {
-        let dataSource = UITableViewDiffableDataSource<Int, Feature>(tableView: tableView) { tableView, indexPath, feature -> UITableViewCell? in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsFeatureTableViewCell.self), for: indexPath) as? SettingsFeatureTableViewCell else {
+        let dataSource = UITableViewDiffableDataSource<Int, Feature>(tableView: tableView) { [weak self] tableView, indexPath, feature -> UITableViewCell? in
+            guard let self = self,
+                  let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingsFeatureTableViewCell.self), for: indexPath) as? SettingsFeatureTableViewCell else {
                 return UITableViewCell()
             }
             cell.titleLabel.text = feature.labelText
@@ -26,6 +27,7 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
             cell.switchStateCallback = { isOn in
                 self.viewModel.updateFeature(with: feature.id, visible: isOn)
             }
+            cell.setupUI(with: self.designService)
             return cell
         }
         return dataSource
@@ -39,10 +41,9 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
         toolBar.translatesAutoresizingMaskIntoConstraints = false
 
-        let closeBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: nil, action: #selector(closeView))
         let flexibleSpaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let saveBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: nil, action: #selector(saveAndCloseView))
-        toolBar.setItems([closeBarButtonItem, flexibleSpaceItem, saveBarButtonItem], animated: false)
+        let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: nil, action: #selector(saveAndCloseView))
+        toolBar.setItems([flexibleSpaceItem, doneBarButtonItem], animated: false)
 
         return toolBar
     }()
@@ -59,7 +60,7 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
     private lazy var currentColorSchemeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Current Colorsheme: \(designService.colorSetting.rawValue)"
+        label.text = "Color Scheme: \(designService.colorSetting.rawValue)"
 
         return label
     }()
@@ -76,6 +77,7 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupLayout()
         setupUI()
         viewModel.prepareObjects()
     }
@@ -94,9 +96,8 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
 
 extension SettingsViewController {
 
-    private func setupUI() {
+    private func setupLayout() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
 
         view.addSubview(toolbarView)
         view.addSubview(currentColorSchemeLabel)
@@ -119,17 +120,31 @@ extension SettingsViewController {
         ])
     }
 
+    private func setupUI() {
+        view.backgroundColor = designService.viewBackgroundColor
+        tableView.backgroundColor = designService.subviewBackgroundColor
+        tableView.separatorColor = designService.labelTextColor
+        currentColorSchemeLabel.textColor = designService.labelTextColor
+        currentColorSchemeLabel.backgroundColor = designService.labelBackgroundColor
+        currentColorSchemeSwitch.backgroundColor = designService.subviewBackgroundColor
+        toolbarView.backgroundColor = designService.subviewBackgroundColor
+        if let items = toolbarView.items {
+            for item in items {
+                item.customView?.backgroundColor = designService.subviewBackgroundColor
+            }
+        }
+
+        for view in toolbarView.subviews {
+            view.backgroundColor = designService.subviewBackgroundColor
+        }
+    }
+
     @objc
     private func saveAndCloseView() {
         viewModel.updateFeaturesList()
         dismiss(animated: true) {
             self.delegate?.applySettings()
         }
-    }
-
-    @objc
-    private func closeView() {
-        dismiss(animated: true, completion: nil)
     }
 
     @objc
@@ -140,6 +155,8 @@ extension SettingsViewController {
             designService.switchColorSchemeTo(newColorScheme: .night)
         }
 
-        currentColorSchemeLabel.text = "Current Colorsheme: \(designService.colorSetting.rawValue)"
+        currentColorSchemeLabel.text = "Color Scheme: \(designService.colorSetting.rawValue)"
+        setupUI()
+        tableView.reloadData()
     }
 }

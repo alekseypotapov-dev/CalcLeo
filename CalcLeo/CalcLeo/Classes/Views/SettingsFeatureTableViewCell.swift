@@ -33,10 +33,19 @@ final class SettingsFeatureTableViewCell: UITableViewCell {
             featureSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             featureSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
+
+        self.selectionStyle = .none
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupUI(with designService: DesignServiceProtocol) {
+        contentView.backgroundColor = designService.viewBackgroundColor
+        titleLabel.backgroundColor = designService.labelBackgroundColor
+        titleLabel.textColor = designService.labelTextColor
+        featureSwitch.backgroundColor = designService.subviewBackgroundColor
     }
 
     @objc
