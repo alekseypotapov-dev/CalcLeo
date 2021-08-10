@@ -4,10 +4,9 @@ import DatabaseLeo
 
 protocol SettingsViewModelDelegate: AnyObject {
     func dataUpdated(models: [Feature])
-    func publishError(_ message: String)
 }
 
-final class SettingsViewModel {
+final class SettingsViewModel: BaseViewModelProtocol {
 
     weak var delegate: SettingsViewModelDelegate?
     private var models: [[Feature]]? {

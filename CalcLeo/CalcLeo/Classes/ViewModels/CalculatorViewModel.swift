@@ -10,7 +10,7 @@ protocol CalculatorViewModelDelegate: AnyObject {
     func updateResult(with text: String)
 }
 
-final class CalculatorViewModel {
+final class CalculatorViewModel: BaseViewModelProtocol {
 
     weak var delegate: CalculatorViewModelDelegate?
     private var models: [[Feature]]? {
@@ -19,7 +19,7 @@ final class CalculatorViewModel {
             delegate?.dataUpdated(with: models)
         }
     }
-    private var currentBtcPrice: Float?
+    private let cryptoCurrencyServiceBaseStringURL = "https://api.coindesk.com/v1/bpi/currentprice/"
 
     private lazy var databaseManager: DatabaseManager = {
         return DatabaseManager(fileName: "Features", fileExtension: "plist", bundlePath: Bundle(for: type(of: self)).bundlePath)
@@ -38,17 +38,8 @@ final class CalculatorViewModel {
     private lazy var plistObjectMappingManager = PlistObjectMappingManager<[[Feature]]>()
     private lazy var jsonObjectMappingManager = JsonObjectMappingManager<OnlineResponse>()
 
-    init(delegate: CalculatorViewModelDelegate?) {
-        self.delegate = delegate
-    }
-
-    func prepareObjects() throws {
-        let data = try databaseManager.readData()
-        self.models = try plistObjectMappingManager.decode(data)
-    }
-
-    func prepareOnlineData(with cryptoCurrency: String, callback: @escaping (Result<Float, Error>) -> Void) throws {
-        let stringURL = "https://api.coindesk.com/v1/bpi/currentprice/" + cryptoCurrency
+    private func prepareOnlineData(with cryptoCurrency: String, callback: @escaping (Result<Float, Error>) -> Void) throws {
+        let stringURL = cryptoCurrencyServiceBaseStringURL + cryptoCurrency
 
         try requestService.requestData(with: stringURL) { [weak self] result in
             guard let self = self else { return }
@@ -65,6 +56,15 @@ final class CalculatorViewModel {
             }
         }
     }
+    
+    init(delegate: CalculatorViewModelDelegate?) {
+        self.delegate = delegate
+    }
+
+    func prepareObjects() throws {
+        let data = try databaseManager.readData()
+        self.models = try plistObjectMappingManager.decode(data)
+    }
 
     func buttonTap(with id: Int) throws {
         guard let models = models else { return }
@@ -73,11 +73,14 @@ final class CalculatorViewModel {
         if element.type == .online {
             try prepareOnlineData(with: element.value) { [weak self] result in
                 guard let self = self else { return }
+
                 switch result {
                 case .success(let value):
                     do {
+                        // for cryptocurrency conversion, perform multiplication functionality
                         let _ = try self.mathLogic.processInput("*")
-                        let result = try self.mathLogic.processInput(String(value))
+                        let _ = try self.mathLogic.processInput(String(value))
+                        let result = try self.mathLogic.processInput("=")
                         self.delegate?.updateResult(with: result)
                     } catch {
                         self.delegate?.publishError(error)

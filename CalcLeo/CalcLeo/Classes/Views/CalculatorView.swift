@@ -45,7 +45,7 @@ final class CalculatorView: UIView {
             try viewModel.prepareObjects()
             setupUI()
         } catch {
-            print(error)
+            AlertService.showErrorAlert(with: error)
         }
     }
 
@@ -77,7 +77,7 @@ final class CalculatorView: UIView {
         do {
             try viewModel.buttonTap(with: sender.tag)
         } catch {
-            print(error)
+            AlertService.showErrorAlert(with: error)
         }
     }
 }
@@ -138,6 +138,6 @@ extension CalculatorView: CalculatorViewModelDelegate {
     }
 
     func publishError(_ error: Error) {
-        print(error.localizedDescription)
+        AlertService.showErrorAlert(with: error)
     }
 }

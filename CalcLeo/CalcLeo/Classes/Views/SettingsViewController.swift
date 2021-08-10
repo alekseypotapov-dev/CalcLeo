@@ -81,7 +81,7 @@ final class SettingsViewController: UIViewController {
         do {
             try viewModel.prepareObjects()
         } catch {
-            print(error.localizedDescription)
+            AlertService.showErrorAlert(with: error)
         }
     }
 }
@@ -139,7 +139,7 @@ extension SettingsViewController {
                 self.delegate?.applySettings()
             }
         } catch {
-            print(error.localizedDescription)
+            AlertService.showErrorAlert(with: error)
         }
     }
 
@@ -164,9 +164,5 @@ extension SettingsViewController: SettingsViewModelDelegate {
         snapshot.appendSections([1])
         snapshot.appendItems(models, toSection: 1)
         tableViewDataSource.apply(snapshot, animatingDifferences: false)
-    }
-
-    func publishError(_ message: String) {
-
     }
 }

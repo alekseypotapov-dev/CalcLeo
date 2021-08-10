@@ -16,6 +16,8 @@
 		849EF32F26C2DFC60091B1A3 /* NetworkLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E768A226C2B337004D2EE0 /* NetworkLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849EF33026C2DFCE0091B1A3 /* CodableLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849EF33126C2DFFD0091B1A3 /* MathLogicLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 849EF32026C2D21B0091B1A3 /* MathLogicLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		849EF33326C2E2DF0091B1A3 /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EF33226C2E2DF0091B1A3 /* BaseViewModelProtocol.swift */; };
+		849EF33526C2E44C0091B1A3 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EF33426C2E44C0091B1A3 /* AlertService.swift */; };
 		84E00D2726BD3FC700B8ECFA /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */; };
 		84E766F726BD5C25004D2EE0 /* DesignLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E766EC26BD5BE3004D2EE0 /* DesignLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E766F926BD76CC004D2EE0 /* DesignService.swift */; };
@@ -130,6 +132,8 @@
 		84366E9526BC74D000AD4D75 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84366ED426BD18F900AD4D75 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		849EF31526C2D21B0091B1A3 /* MathLogicLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MathLogicLeo.xcodeproj; path = ../../../MathLogicLeo/MathLogicLeo.xcodeproj; sourceTree = "<group>"; };
+		849EF33226C2E2DF0091B1A3 /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
+		849EF33426C2E44C0091B1A3 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DesignLeo.xcodeproj; path = ../../../DesignLeo/DesignLeo.xcodeproj; sourceTree = "<group>"; };
 		84E766F926BD76CC004D2EE0 /* DesignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignService.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				84E766F926BD76CC004D2EE0 /* DesignService.swift */,
+				849EF33426C2E44C0091B1A3 /* AlertService.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 		84E7677426BEE80E004D2EE0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				849EF33226C2E2DF0091B1A3 /* BaseViewModelProtocol.swift */,
 				84E7677226BEE805004D2EE0 /* CalculatorViewModel.swift */,
 				84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */,
 			);
@@ -518,6 +524,7 @@
 			files = (
 				84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */,
 				84366ED526BD18F900AD4D75 /* MainViewController.swift in Sources */,
+				849EF33526C2E44C0091B1A3 /* AlertService.swift in Sources */,
 				84E7677326BEE805004D2EE0 /* CalculatorViewModel.swift in Sources */,
 				84E767A726C1A1AC004D2EE0 /* UIStackView+Extension.swift in Sources */,
 				84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */,
@@ -528,6 +535,7 @@
 				84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */,
 				84E767A226C17227004D2EE0 /* SettingsFeatureTableViewCell.swift in Sources */,
 				84E767A026C1600D004D2EE0 /* SettingsViewModel.swift in Sources */,
+				849EF33326C2E2DF0091B1A3 /* BaseViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
