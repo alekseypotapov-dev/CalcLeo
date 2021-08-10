@@ -3,11 +3,13 @@
 ## Features
 1. Basic Operations: +, -, *, /, sin, cos, concatenation of operations
 2. Extra (Online) Operation: BTC -> USD conversion (Powered by [CoinDesk](https://www.coindesk.com/price/bitcoin))
-1. User Interface: 
+3. MVVM architecture
+4. User Interface: 
     - [x] Responsive and adaptive UI (iPhone and iPad friendly)
-    - [x] Day/Night color scheme (changeable in Settings)
-    - [x] Error handling
-2. Dependencies using Swift Package Management (all of them covered with tests)
+    - [x] Simple color scheme switch
+    - [x] Feature switch: you change the visibility for each buttn thanks to UIStackViews (in Settings)
+    - [x] Error handling (functions "throw" where passible)
+5. Modularity thanks to Swift Package Management (covered with tests):
     - [MathLogicLeo](https://github.com/alekseypotapov-dev/MathLogicLeo) stands for math operations
     - [DatabaseLeo](https://github.com/alekseypotapov-dev/DatabaseLeo) reads and writes data to a local file
     - [CodableLeo](https://github.com/alekseypotapov-dev/CodableLeo) object encoding/decoding
