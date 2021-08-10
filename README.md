@@ -1,4 +1,7 @@
 # 🦁 Rawwr-culator
+![Usage](https://github.com/alekseypotapov-dev/CalcLeo/blob/master/media/iPhone_portrait.gif)
+
+More images in [Media folder](https://github.com/alekseypotapov-dev/CalcLeo/tree/master/media)
 
 ## Features
 1. Basic Operations: +, -, *, /, sin, cos, concatenation of operations
