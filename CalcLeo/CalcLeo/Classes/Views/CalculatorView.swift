@@ -1,5 +1,4 @@
 import UIKit
-import MathLeo
 
 final class CalculatorView: UIView {
 
@@ -42,8 +41,12 @@ final class CalculatorView: UIView {
     }
 
     func updateView() {
-        viewModel.prepareObjects()
-        setupUI()
+        do {
+            try viewModel.prepareObjects()
+            setupUI()
+        } catch {
+            print(error)
+        }
     }
 
     private func setupLayout() {
@@ -71,13 +74,17 @@ final class CalculatorView: UIView {
 
     @objc
     func buttonTap(_ sender: UIButton) {
-        viewModel.buttonTap(with: sender.tag)
+        do {
+            try viewModel.buttonTap(with: sender.tag)
+        } catch {
+            print(error)
+        }
     }
 }
 
 extension CalculatorView: CalculatorViewModelDelegate {
 
-    func dataUpdated(models: [[Feature]]) {
+    func dataUpdated(with models: [[Feature]]) {
 
         DispatchQueue.main.async {
             self.mainHorizontalStackView.removeAllArrangedSubviews()
@@ -130,7 +137,7 @@ extension CalculatorView: CalculatorViewModelDelegate {
         }
     }
 
-    func publishError(_ message: String) {
-        // tod: show alert with error
+    func publishError(_ error: Error) {
+        print(error.localizedDescription)
     }
 }

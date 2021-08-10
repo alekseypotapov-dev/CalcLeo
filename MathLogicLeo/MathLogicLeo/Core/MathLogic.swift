@@ -34,10 +34,6 @@ public class MathLogic {
     private var inputInProgress: Bool = false
     private let maxDisplayValueLength: Int
 
-    public init(maxDisplayValueLength: Int = 10) {
-        self.maxDisplayValueLength = maxDisplayValueLength
-    }
-
     private var operations: Dictionary<String, Operation> = [
         "+" : .binaryOperation({ $0 + $1 }),
         "-" : .binaryOperation({ $0 - $1 }),
@@ -51,6 +47,10 @@ public class MathLogic {
 
     static private func sinDeg(_ degrees: Double) -> Double { sin(degrees * .pi / 180.0) }
     static private func cosDeg(_ degrees: Double) -> Double { cos(degrees * .pi / 180.0) }
+
+    public init(maxDisplayValueLength: Int = 10) {
+        self.maxDisplayValueLength = maxDisplayValueLength
+    }
 
     public func processInput(_ input: String) throws -> String {
         if let _ = operations.first(where: { $0.key == input }) {
@@ -74,19 +74,27 @@ public class MathLogic {
 
             return currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero()
         } else if let _ = Int(input)  {
-            if !inputInProgress {
-                currentDisplayValue = input
-                inputInProgress = true
-            } else if let zero = currentDisplayValue.first, currentDisplayValue.count == 1 && zero == "0" {
-                currentDisplayValue = input
-            } else if inputInProgress {
-                currentDisplayValue += input
-            }
+            performDigitInput(with: input)
+
+            return currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero()
+        } else if let _ = Float(input) {
+            performDigitInput(with: input)
 
             return currentDisplayValue.setMaxLength(of: maxDisplayValueLength).removeAfterPointIfZero()
         }
         
         throw MathLogicError.invalidOperation
+    }
+
+    private func performDigitInput(with input: String) {
+        if !inputInProgress {
+            currentDisplayValue = input
+            inputInProgress = true
+        } else if let zero = currentDisplayValue.first, currentDisplayValue.count == 1 && zero == "0" {
+            currentDisplayValue = input
+        } else if inputInProgress {
+            currentDisplayValue += input
+        }
     }
 
     private func performOperation(_ operation: String) {

@@ -1,5 +1,4 @@
 import UIKit
-import MathLeo
 
 final class SettingsViewController: UIViewController {
 
@@ -79,7 +78,11 @@ final class SettingsViewController: UIViewController {
 
         setupLayout()
         setupUI()
-        viewModel.prepareObjects()
+        do {
+            try viewModel.prepareObjects()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
@@ -130,9 +133,13 @@ extension SettingsViewController {
 
     @objc
     private func saveAndCloseView() {
-        viewModel.updateFeaturesList()
-        dismiss(animated: true) {
-            self.delegate?.applySettings()
+        do {
+            try viewModel.updateFeaturesList()
+            dismiss(animated: true) {
+                self.delegate?.applySettings()
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 

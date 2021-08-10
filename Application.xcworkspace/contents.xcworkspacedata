@@ -5,9 +5,6 @@
       location = "group:CalcLeo/CalcLeo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MathLeo/MathLeo.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:DatabaseLeo/DatabaseLeo.xcodeproj">
    </FileRef>
    <FileRef

@@ -194,4 +194,22 @@ final class MathLogicTests: XCTestCase {
             }
         }
     }
+
+    func test_cryptoCurrencyConverter_1btc_success() {
+        let sut = MathLogic()
+
+        let expected = "45111.12"
+
+        do {
+            let _ = try sut.processInput("1")
+            let _ = try sut.processInput("*")
+            let _ = try sut.processInput("45111.12")
+            let actual = try sut.processInput("=")
+            XCTAssertEqual(actual, expected)
+        } catch {
+            if let e = error as? MathLogicError {
+                XCTFail(e.description)
+            }
+        }
+    }
 }

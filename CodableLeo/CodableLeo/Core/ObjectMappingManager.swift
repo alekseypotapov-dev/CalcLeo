@@ -19,6 +19,8 @@ public protocol ObjectMappingManagerProtocol {
 
 public struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
 
+    public init() {}
+
     public func decode(_ data: Data) throws -> Object {
         let decoder = PropertyListDecoder()
 
@@ -38,6 +40,8 @@ public struct PlistObjectMappingManager<Object: Codable>: ObjectMappingManagerPr
 }
 
 public struct JsonObjectMappingManager<Object: Codable>: ObjectMappingManagerProtocol {
+
+    public init() {}
 
     public func decode(_ data: Data) throws -> Object {
         let decoder = JSONDecoder()

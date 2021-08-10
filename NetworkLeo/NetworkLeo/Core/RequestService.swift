@@ -23,6 +23,8 @@ public protocol RequestServiceProtocol {
 
 public struct RequestService: RequestServiceProtocol {
 
+    public init() {}
+    
     public func requestData(with stringUrl: String, callback: @escaping (Result<Data, RequestServiceError>) -> Void) throws {
         guard NetworkService.isAvailable else {
             throw RequestServiceError.noInternetConnection

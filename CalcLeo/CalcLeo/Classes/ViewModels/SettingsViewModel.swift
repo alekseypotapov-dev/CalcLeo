@@ -1,5 +1,6 @@
 import Foundation
-import MathLeo
+import CodableLeo
+import DatabaseLeo
 
 protocol SettingsViewModelDelegate: AnyObject {
     func dataUpdated(models: [Feature])
@@ -9,36 +10,33 @@ protocol SettingsViewModelDelegate: AnyObject {
 final class SettingsViewModel {
 
     weak var delegate: SettingsViewModelDelegate?
-    private var features: [[Feature]]? {
+    private var models: [[Feature]]? {
         didSet {
-            guard let features = features else { return }
-            let sortedFeatures = features.reduce([], +).sorted { $0.value < $1.value }
-            delegate?.dataUpdated(models: sortedFeatures)
+            guard let models = models else { return }
+            let sortedModels = models.reduce([], +).sorted { $0.value < $1.value }
+            delegate?.dataUpdated(models: sortedModels)
         }
     }
 
-    private lazy var featureProvider: FeatureProvider = {
-        let featureProvider = FeatureProvider()
-        return featureProvider
+    private lazy var databaseManager: DatabaseManager = {
+        return DatabaseManager(fileName: "Features", fileExtension: "plist", bundlePath: Bundle(for: type(of: self)).bundlePath)
     }()
+
+    private lazy var plistObjectMappingManager = PlistObjectMappingManager<[[Feature]]>()
 
     init(delegate: SettingsViewModelDelegate?) {
         self.delegate = delegate
     }
 
-    func prepareObjects() {
-        featureProvider.provideFeatures { [weak self] result in
-            switch result {
-            case .success(let objects): self?.features = objects
-            case .failure(let error): self?.delegate?.publishError(error.localizedDescription)
-            }
-        }
+    func prepareObjects() throws {
+        let data = try databaseManager.readData()
+        self.models = try plistObjectMappingManager.decode(data)
     }
 
     func updateFeature(with id: Int, visible: Bool) {
-        guard let features = features else { return }
+        guard let models = models else { return }
 
-        let newArr = features.map { $0.map { feature -> Feature in
+        let newArray = models.map { $0.map { feature -> Feature in
             if feature.id == id {
                 var updatedFeature = feature
                 updatedFeature.updateVisibility(isVisible: visible)
@@ -48,12 +46,13 @@ final class SettingsViewModel {
             }
         }}
 
-        self.features = newArr
+        self.models = newArray
     }
 
-    func updateFeaturesList() {
-        guard let features = features else { return }
+    func updateFeaturesList() throws {
+        guard let features = models else { return }
 
-        featureProvider.writeToFeaturePlist(with: features)
+        let data = try plistObjectMappingManager.encode(features)
+        try databaseManager.writeData(data)
     }
 }
