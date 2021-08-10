@@ -1,7 +1,7 @@
 import UIKit
 import MathLeo
 
-final class CalculatorView: UIView, CalculatorViewModelDelegate {
+final class CalculatorView: UIView {
 
     var designService: DesignServiceProtocol
 
@@ -69,10 +69,18 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         mainHorizontalStackView.backgroundColor = designService.subviewBackgroundColor
     }
 
+    @objc
+    func buttonTap(_ sender: UIButton) {
+        viewModel.buttonTap(with: sender.tag)
+    }
+}
+
+extension CalculatorView: CalculatorViewModelDelegate {
+
     func dataUpdated(models: [[Feature]]) {
+
         DispatchQueue.main.async {
             self.mainHorizontalStackView.removeAllArrangedSubviews()
-
             var columnStackViews = [UIStackView]()
 
             for buttonColumn in models {
@@ -116,18 +124,13 @@ final class CalculatorView: UIView, CalculatorViewModelDelegate {
         }
     }
 
-    func publishError(_ message: String) {
-        // tod: show alert with error
-    }
-
     func updateResult(with text: String) {
         DispatchQueue.main.async {
             self.resultLabel.text = text
         }
     }
 
-    @objc
-    func buttonTap(_ sender: UIButton) {
-        viewModel.buttonTap(with: sender.tag)
+    func publishError(_ message: String) {
+        // tod: show alert with error
     }
 }

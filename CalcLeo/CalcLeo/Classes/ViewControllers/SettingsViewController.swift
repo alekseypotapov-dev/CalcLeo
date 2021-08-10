@@ -1,7 +1,7 @@
 import UIKit
 import MathLeo
 
-final class SettingsViewController: UIViewController, SettingsViewModelDelegate {
+final class SettingsViewController: UIViewController {
 
     weak var delegate: MainViewControllerDelegate?
     private let designService: DesignServiceProtocol
@@ -81,17 +81,6 @@ final class SettingsViewController: UIViewController, SettingsViewModelDelegate 
         setupUI()
         viewModel.prepareObjects()
     }
-
-    func dataUpdated(models: [Feature]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Feature>()
-        snapshot.appendSections([1])
-        snapshot.appendItems(models, toSection: 1)
-        tableViewDataSource.apply(snapshot, animatingDifferences: false)
-    }
-
-    func publishError(_ message: String) {
-
-    }
 }
 
 extension SettingsViewController {
@@ -108,11 +97,11 @@ extension SettingsViewController {
             toolbarView.topAnchor.constraint(equalTo: view.topAnchor),
             toolbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             toolbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            currentColorSchemeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            currentColorSchemeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             currentColorSchemeLabel.topAnchor.constraint(equalTo: toolbarView.bottomAnchor),
             currentColorSchemeLabel.heightAnchor.constraint(equalToConstant: 50),
             currentColorSchemeSwitch.centerYAnchor.constraint(equalTo: currentColorSchemeLabel.centerYAnchor),
-            currentColorSchemeSwitch.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            currentColorSchemeSwitch.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             tableView.topAnchor.constraint(equalTo: currentColorSchemeLabel.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -158,5 +147,19 @@ extension SettingsViewController {
         currentColorSchemeLabel.text = "Color Scheme: \(designService.colorSetting.rawValue)"
         setupUI()
         tableView.reloadData()
+    }
+}
+
+extension SettingsViewController: SettingsViewModelDelegate {
+
+    func dataUpdated(models: [Feature]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Feature>()
+        snapshot.appendSections([1])
+        snapshot.appendItems(models, toSection: 1)
+        tableViewDataSource.apply(snapshot, animatingDifferences: false)
+    }
+
+    func publishError(_ message: String) {
+
     }
 }

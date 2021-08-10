@@ -72,9 +72,10 @@ extension MainViewController {
     }
 
     @objc
-    func openSettings() {
+    private func openSettings() {
         let settingsViewController = SettingsViewController(designService: designService)
         settingsViewController.delegate = self
+        settingsViewController.isModalInPresentation = true
         present(settingsViewController, animated: true, completion: nil)
     }
 }

@@ -42,6 +42,7 @@ final class SettingsFeatureTableViewCell: UITableViewCell {
     }
 
     func setupUI(with designService: DesignServiceProtocol) {
+        backgroundColor = designService.viewBackgroundColor
         contentView.backgroundColor = designService.viewBackgroundColor
         titleLabel.backgroundColor = designService.labelBackgroundColor
         titleLabel.textColor = designService.labelTextColor
