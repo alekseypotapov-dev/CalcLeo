@@ -67,6 +67,20 @@
 			remoteGlobalIDString = 84E767EF26C292EB004D2EE0;
 			remoteInfo = DatabaseLeoTests;
 		};
+		84E7686F26C2AF9F004D2EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84E7684526C2A90E004D2EE0;
+			remoteInfo = CodableLeo;
+		};
+		84E7687126C2AF9F004D2EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84E7684E26C2A90F004D2EE0;
+			remoteInfo = CodableLeoTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +119,7 @@
 		84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureTableViewCell.swift; sourceTree = "<group>"; };
 		84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DatabaseLeo.xcodeproj; path = ../../../DatabaseLeo/DatabaseLeo.xcodeproj; sourceTree = "<group>"; };
+		84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodableLeo.xcodeproj; path = ../../../CodableLeo/CodableLeo.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +221,7 @@
 		84E766E626BD5BB3004D2EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */,
 				84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */,
 				84E766E726BD5BE3004D2EE0 /* DesignLeo.xcodeproj */,
 				84E766ED26BD5BEC004D2EE0 /* MathLeo.xcodeproj */,
@@ -260,6 +276,15 @@
 			children = (
 				84E7680D26C2A749004D2EE0 /* DatabaseLeo.framework */,
 				84E7680F26C2A749004D2EE0 /* DatabaseLeoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E7686B26C2AF9F004D2EE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */,
+				84E7687226C2AF9F004D2EE0 /* CodableLeoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +359,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 84E7686B26C2AF9F004D2EE0 /* Products */;
+					ProjectRef = 84E7686A26C2AF9F004D2EE0 /* CodableLeo.xcodeproj */;
+				},
+				{
 					ProductGroup = 84E7680826C2A749004D2EE0 /* Products */;
 					ProjectRef = 84E7680726C2A749004D2EE0 /* DatabaseLeo.xcodeproj */;
 				},
@@ -388,6 +417,20 @@
 			fileType = wrapper.cfbundle;
 			path = DatabaseLeoTests.xctest;
 			remoteRef = 84E7680E26C2A749004D2EE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CodableLeo.framework;
+			remoteRef = 84E7686F26C2AF9F004D2EE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E7687226C2AF9F004D2EE0 /* CodableLeoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CodableLeoTests.xctest;
+			remoteRef = 84E7687126C2AF9F004D2EE0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
