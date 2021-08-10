@@ -7,13 +7,17 @@ final class RequestServiceTests: XCTestCase {
         let sut = RequestService()
         let expectation = expectation(description: "request test")
 
-        sut.requestData(with: "https://apple.com") { result in
-            switch result {
-            case .success( _ ): XCTAssertTrue(true)
-            case .failure(let error): XCTFail(error.localizedDescription)
-            }
+        do {
+            try sut.requestData(with: "https://apple.com") { result in
+                switch result {
+                case .success( _ ): XCTAssertTrue(true)
+                case .failure(let error): XCTFail(error.localizedDescription)
+                }
 
-            expectation.fulfill()
+                expectation.fulfill()
+            }
+        } catch {
+            XCTFail(error.localizedDescription)
         }
 
         waitForExpectations(timeout: 1) { error in
@@ -26,14 +30,18 @@ final class RequestServiceTests: XCTestCase {
     func test_request_fail() {
         let sut = RequestService()
         let expectation = expectation(description: "request test")
-
-        sut.requestData(with: "esuaeis") { result in
-            switch result {
-            case .success( _ ): XCTFail("shouldn't be success")
-            case .failure( _ ): XCTAssertTrue(true)
+        
+        do {
+            try sut.requestData(with: "esuaeis") { result in
+                switch result {
+                case .success( _ ): XCTFail("shouldn't be success")
+                case .failure( _ ): XCTAssertTrue(true)
+                }
+                
+                expectation.fulfill()
             }
-
-            expectation.fulfill()
+        } catch {
+            XCTFail(error.localizedDescription)
         }
 
         waitForExpectations(timeout: 1) { error in

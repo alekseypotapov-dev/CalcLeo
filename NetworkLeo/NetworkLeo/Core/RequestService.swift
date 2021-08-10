@@ -4,27 +4,32 @@ public enum RequestServiceError: Error, CustomStringConvertible {
     case urlNotValid
     case responseError
     case dataNotExists
+    case noInternetConnection
 
     public var description: String {
         switch self {
         case .dataNotExists: return "Data not exsists"
         case .responseError: return "ResponseError"
         case .urlNotValid: return "Url not valid"
+        case .noInternetConnection: return "No internet connection"
         }
     }
 }
 
 public protocol RequestServiceProtocol {
 
-    func requestData(with stringUrl: String, callback: @escaping (Result<Data, RequestServiceError>) -> Void)
+    func requestData(with stringUrl: String, callback: @escaping (Result<Data, RequestServiceError>) -> Void) throws
 }
 
 public struct RequestService: RequestServiceProtocol {
 
-    public func requestData(with stringUrl: String, callback: @escaping (Result<Data, RequestServiceError>) -> Void) {
+    public func requestData(with stringUrl: String, callback: @escaping (Result<Data, RequestServiceError>) -> Void) throws {
+        guard NetworkService.isAvailable else {
+            throw RequestServiceError.noInternetConnection
+        }
+
         guard let url =  URL(string: stringUrl) else {
-            callback(.failure(.urlNotValid))
-            return
+            throw RequestServiceError.urlNotValid
         }
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
