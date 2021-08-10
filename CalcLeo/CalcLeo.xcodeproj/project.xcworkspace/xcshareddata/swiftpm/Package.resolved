@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CodableLeo",
+        "repositoryURL": "https://github.com/alekseypotapov-dev/CodableLeo",
+        "state": {
+          "branch": "master",
+          "revision": "3bd84068f8e15ddb8d51da11e269e07e170e734a",
+          "version": null
+        }
+      },
+      {
+        "package": "DatabaseLeo",
+        "repositoryURL": "https://github.com/alekseypotapov-dev/DatabaseLeo",
+        "state": {
+          "branch": "master",
+          "revision": "d6fa79d725690fc2b558765bcb143a9a45648a63",
+          "version": null
+        }
+      },
+      {
+        "package": "DesignLeo",
+        "repositoryURL": "https://github.com/alekseypotapov-dev/DesignLeo",
+        "state": {
+          "branch": "master",
+          "revision": "fedc1420cd14c294c086f843f90c397430b3836c",
+          "version": null
+        }
+      },
+      {
+        "package": "MathLogicLeo",
+        "repositoryURL": "https://github.com/alekseypotapov-dev/MathLogicLeo",
+        "state": {
+          "branch": "master",
+          "revision": "dde7f663511bf6e612a3d9b8eede397251fac42b",
+          "version": null
+        }
+      },
+      {
+        "package": "NetworkLeo",
+        "repositoryURL": "https://github.com/alekseypotapov-dev/NetworkLeo",
+        "state": {
+          "branch": "master",
+          "revision": "b5b3100a0be1e0f9d07f61b8d68c044d85c726ae",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

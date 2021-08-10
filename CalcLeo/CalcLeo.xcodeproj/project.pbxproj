@@ -3,29 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8413A9BB26C30772008254C1 /* DesignLeo in Frameworks */ = {isa = PBXBuildFile; productRef = 8413A9BA26C30772008254C1 /* DesignLeo */; };
+		8413A9D826C30AD6008254C1 /* NetworkLeo in Frameworks */ = {isa = PBXBuildFile; productRef = 8413A9D726C30AD6008254C1 /* NetworkLeo */; };
+		8413A9EA26C30F6D008254C1 /* CodableLeo in Frameworks */ = {isa = PBXBuildFile; productRef = 8413A9E926C30F6D008254C1 /* CodableLeo */; };
+		8413A9F226C31110008254C1 /* DatabaseLeo in Frameworks */ = {isa = PBXBuildFile; productRef = 8413A9F126C31110008254C1 /* DatabaseLeo */; };
+		8413A9FC26C31259008254C1 /* MathLogicLeo in Frameworks */ = {isa = PBXBuildFile; productRef = 8413A9FB26C31259008254C1 /* MathLogicLeo */; };
 		84366E7D26BADABD00AD4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7C26BADABD00AD4D75 /* AppDelegate.swift */; };
 		84366E7F26BADABD00AD4D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E7E26BADABD00AD4D75 /* SceneDelegate.swift */; };
 		84366E8626BADABF00AD4D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8526BADABF00AD4D75 /* Assets.xcassets */; };
 		84366E8926BADABF00AD4D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84366E8726BADABF00AD4D75 /* LaunchScreen.storyboard */; };
 		84366E9626BC74D000AD4D75 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366E9526BC74D000AD4D75 /* SettingsViewController.swift */; };
 		84366ED526BD18F900AD4D75 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84366ED426BD18F900AD4D75 /* MainViewController.swift */; };
-		849EF32F26C2DFC60091B1A3 /* NetworkLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E768A226C2B337004D2EE0 /* NetworkLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		849EF33026C2DFCE0091B1A3 /* CodableLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7687026C2AF9F004D2EE0 /* CodableLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		849EF33126C2DFFD0091B1A3 /* MathLogicLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 849EF32026C2D21B0091B1A3 /* MathLogicLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849EF33326C2E2DF0091B1A3 /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EF33226C2E2DF0091B1A3 /* BaseViewModelProtocol.swift */; };
 		849EF33526C2E44C0091B1A3 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EF33426C2E44C0091B1A3 /* AlertService.swift */; };
 		84E00D2726BD3FC700B8ECFA /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E00D2626BD3FC700B8ECFA /* CalculatorView.swift */; };
-		84E766F726BD5C25004D2EE0 /* DesignLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E766EC26BD5BE3004D2EE0 /* DesignLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E766FA26BD76CC004D2EE0 /* DesignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E766F926BD76CC004D2EE0 /* DesignService.swift */; };
 		84E7677326BEE805004D2EE0 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7677226BEE805004D2EE0 /* CalculatorViewModel.swift */; };
 		84E767A026C1600D004D2EE0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7679F26C1600D004D2EE0 /* SettingsViewModel.swift */; };
 		84E767A226C17227004D2EE0 /* SettingsFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E767A126C17227004D2EE0 /* SettingsFeatureTableViewCell.swift */; };
 		84E767A726C1A1AC004D2EE0 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E767A626C1A1AC004D2EE0 /* UIStackView+Extension.swift */; };
-		84E7681326C2A753004D2EE0 /* DatabaseLeo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7680D26C2A749004D2EE0 /* DatabaseLeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E768F926C2D148004D2EE0 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E768F726C2D147004D2EE0 /* Feature.swift */; };
 		84E768FA26C2D148004D2EE0 /* OnlineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E768F826C2D148004D2EE0 /* OnlineResponse.swift */; };
 		84E768FC26C2D15A004D2EE0 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E768FB26C2D156004D2EE0 /* Features.plist */; };
@@ -104,24 +104,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		84E766F626BD5C00004D2EE0 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				84E766F726BD5C25004D2EE0 /* DesignLeo.framework in Copy Frameworks */,
-				84E7681326C2A753004D2EE0 /* DatabaseLeo.framework in Copy Frameworks */,
-				849EF33026C2DFCE0091B1A3 /* CodableLeo.framework in Copy Frameworks */,
-				849EF32F26C2DFC60091B1A3 /* NetworkLeo.framework in Copy Frameworks */,
-				849EF33126C2DFFD0091B1A3 /* MathLogicLeo.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		84366E7926BADABD00AD4D75 /* CalcLeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcLeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84366E7C26BADABD00AD4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +138,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8413A9F226C31110008254C1 /* DatabaseLeo in Frameworks */,
+				8413A9EA26C30F6D008254C1 /* CodableLeo in Frameworks */,
+				8413A9D826C30AD6008254C1 /* NetworkLeo in Frameworks */,
+				8413A9FC26C31259008254C1 /* MathLogicLeo in Frameworks */,
+				8413A9BB26C30772008254C1 /* DesignLeo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,13 +330,19 @@
 				84366E7526BADABD00AD4D75 /* Sources */,
 				84366E7626BADABD00AD4D75 /* Frameworks */,
 				84366E7726BADABD00AD4D75 /* Resources */,
-				84E766F626BD5C00004D2EE0 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CalcLeo;
+			packageProductDependencies = (
+				8413A9BA26C30772008254C1 /* DesignLeo */,
+				8413A9D726C30AD6008254C1 /* NetworkLeo */,
+				8413A9E926C30F6D008254C1 /* CodableLeo */,
+				8413A9F126C31110008254C1 /* DatabaseLeo */,
+				8413A9FB26C31259008254C1 /* MathLogicLeo */,
+			);
 			productName = CalcLeo;
 			productReference = 84366E7926BADABD00AD4D75 /* CalcLeo.app */;
 			productType = "com.apple.product-type.application";
@@ -399,6 +392,13 @@
 				Base,
 			);
 			mainGroup = 84366E7026BADABD00AD4D75;
+			packageReferences = (
+				8413A9B926C30772008254C1 /* XCRemoteSwiftPackageReference "DesignLeo" */,
+				8413A9D626C30AD6008254C1 /* XCRemoteSwiftPackageReference "NetworkLeo" */,
+				8413A9E826C30F6D008254C1 /* XCRemoteSwiftPackageReference "CodableLeo" */,
+				8413A9F026C31110008254C1 /* XCRemoteSwiftPackageReference "DatabaseLeo" */,
+				8413A9FA26C31259008254C1 /* XCRemoteSwiftPackageReference "MathLogicLeo" */,
+			);
 			productRefGroup = 84366E7A26BADABD00AD4D75 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -795,6 +795,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8413A9B926C30772008254C1 /* XCRemoteSwiftPackageReference "DesignLeo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alekseypotapov-dev/DesignLeo";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8413A9D626C30AD6008254C1 /* XCRemoteSwiftPackageReference "NetworkLeo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alekseypotapov-dev/NetworkLeo";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8413A9E826C30F6D008254C1 /* XCRemoteSwiftPackageReference "CodableLeo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alekseypotapov-dev/CodableLeo";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8413A9F026C31110008254C1 /* XCRemoteSwiftPackageReference "DatabaseLeo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alekseypotapov-dev/DatabaseLeo";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8413A9FA26C31259008254C1 /* XCRemoteSwiftPackageReference "MathLogicLeo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alekseypotapov-dev/MathLogicLeo";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8413A9BA26C30772008254C1 /* DesignLeo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8413A9B926C30772008254C1 /* XCRemoteSwiftPackageReference "DesignLeo" */;
+			productName = DesignLeo;
+		};
+		8413A9D726C30AD6008254C1 /* NetworkLeo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8413A9D626C30AD6008254C1 /* XCRemoteSwiftPackageReference "NetworkLeo" */;
+			productName = NetworkLeo;
+		};
+		8413A9E926C30F6D008254C1 /* CodableLeo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8413A9E826C30F6D008254C1 /* XCRemoteSwiftPackageReference "CodableLeo" */;
+			productName = CodableLeo;
+		};
+		8413A9F126C31110008254C1 /* DatabaseLeo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8413A9F026C31110008254C1 /* XCRemoteSwiftPackageReference "DatabaseLeo" */;
+			productName = DatabaseLeo;
+		};
+		8413A9FB26C31259008254C1 /* MathLogicLeo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8413A9FA26C31259008254C1 /* XCRemoteSwiftPackageReference "MathLogicLeo" */;
+			productName = MathLogicLeo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84366E7126BADABD00AD4D75 /* Project object */;
 }
