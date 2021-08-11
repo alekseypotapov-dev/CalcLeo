@@ -77,7 +77,9 @@ final class CalculatorView: UIView {
         do {
             try viewModel.buttonTap(with: sender.tag)
         } catch {
-            AlertService.showErrorAlert(with: error)
+            DispatchQueue.main.async {
+                AlertService.showErrorAlert(with: error)
+            }
         }
     }
 }
